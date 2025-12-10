@@ -60,3 +60,6 @@ install/
 **/.gdb_history
 
 .git-completion.bash
+
+# docker
+*/docker/docker-compose.yml

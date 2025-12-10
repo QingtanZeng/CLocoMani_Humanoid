@@ -37,11 +37,7 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       # [修改点] 映射您的项目路径
-      - /home/zengqt/Projects_Linux/Robot/wb_humanoid/Humanoid_LocoManipulation:${Humanoid_LocoManipulation_DIR:-/Humanoid_LocoManipulation_dev}
-      - /home/zengqt/Projects_Linux/Robot/wb_humanoid/humanoid_mpc_ws:${WB_HUMANOID_MPC_DIR:-/wb_humanoid_mpc_ws}
-      - /home/zengqt/Projects_Linux/Robot/wb_humanoid/humanoid_mpc_ws_release:/wb_humanoid_mpc_ws_release
       # 建议：为了 SSH 免密登录，可以将宿主机的公钥映射进去
-      # - /home/zengqt/.ssh/id_rsa.pub:/home/dev/.ssh/authorized_keys:ro
       # Deliver configuration files
       - ${HOME}/.gitconfig:/home/dev/.gitconfig:ro
       # Add Volume for vscode configuration and extensions

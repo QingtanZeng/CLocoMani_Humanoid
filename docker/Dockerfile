@@ -124,7 +124,7 @@ ENV PROMPT_DIRTRIM=2
 
 
 WORKDIR ${Humanoid_LocoManipulation_DIR}
-RUN mkdir -p ${Humanoid_LocoManipulation_DIR}/src/Humanoid_LocoManipulation
+RUN mkdir -p ${Humanoid_LocoManipulation_DIR}
 RUN chown -R dev:dev $Humanoid_LocoManipulation_DIR
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
