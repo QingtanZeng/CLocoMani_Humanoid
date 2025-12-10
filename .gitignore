@@ -62,4 +62,5 @@ install/
 .git-completion.bash
 
 # docker
-*/docker/docker-compose.yml
+docker/docker-compose.yml
+docker/docker-compose.yml.back

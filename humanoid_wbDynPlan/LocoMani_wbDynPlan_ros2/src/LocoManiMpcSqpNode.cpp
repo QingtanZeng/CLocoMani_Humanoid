@@ -13,7 +13,7 @@
 #include <LocoMani_wbDynPlan/LocoManiMpcInterface.h>
 #include <LocoMani_wbDynPlan/command/LocoManiMpcTargetTrajectoriesCalculator.h>
 // Common MPC ROS2
-#include "humanoid_common_mpc_ros2/ros_comm/Ros2ProceduralMpcMotionManager.h"
+#include "wbDynPlan_ros2/ros_comm/Ros2ProceduralMpcMotionManager.h"
 
 using namespace ocs2;
 using namespace ocs2::humanoid;

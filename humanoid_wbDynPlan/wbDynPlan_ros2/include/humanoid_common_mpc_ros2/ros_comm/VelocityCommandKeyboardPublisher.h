@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include <humanoid_common_mpc/common/Types.h>
+#include <wbDynPlan/common/Types.h>
 #include <rclcpp/rclcpp.hpp>
 #include "humanoid_mpc_msgs/msg/walking_velocity_command.hpp"
 

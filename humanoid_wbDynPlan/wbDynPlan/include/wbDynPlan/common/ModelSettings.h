@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "humanoid_common_mpc/common/Types.h"
+#include "wbDynPlan/common/Types.h"
 
 namespace ocs2::humanoid {
 

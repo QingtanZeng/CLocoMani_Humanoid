@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import setup
 
-package_name = "humanoid_common_mpc_pyutils"
+package_name = "wbDynPlan_pyutils"
 
 setup(
     name=package_name,
@@ -22,7 +22,7 @@ setup(
     tests_require=["pytest"],
     entry_points={
         "console_scripts": [
-            "mpc_observation_logger = humanoid_common_mpc_pyutils.mpc_observation_logger:main",
+            "mpc_observation_logger = wbDynPlan_pyutils.mpc_observation_logger:main",
         ],
     },
 )

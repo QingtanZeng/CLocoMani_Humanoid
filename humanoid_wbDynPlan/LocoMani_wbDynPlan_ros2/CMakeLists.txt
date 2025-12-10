@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(humanoid_centroidal_mpc_ros2)
+project(LocoMani_wbDynPlan_ros2)
 
 if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     add_compile_options(-Wall -Wextra -Wpedantic -Werror=return-type)
@@ -25,10 +25,10 @@ find_package(ocs2_core REQUIRED)
 find_package(ocs2_mpc REQUIRED)
 find_package(ocs2_sqp REQUIRED)
 find_package(ocs2_robotic_tools REQUIRED)
-find_package(humanoid_centroidal_mpc REQUIRED)
+find_package(LocoMani_wbDynPlan REQUIRED)
 find_package(ocs2_centroidal_model REQUIRED)
 find_package(ocs2_pinocchio_interface REQUIRED)
-find_package(humanoid_common_mpc_ros2 REQUIRED)
+find_package(wbDynPlan_ros2 REQUIRED)
 find_package(mujoco_sim_interface REQUIRED)
 
 
@@ -82,10 +82,10 @@ set(dependencies
   ocs2_mpc
   ocs2_sqp
   ocs2_robotic_tools
-  humanoid_centroidal_mpc
+  LocoMani_wbDynPlan
   ocs2_centroidal_model
   ocs2_pinocchio_interface
-  humanoid_common_mpc_ros2
+  wbDynPlan_ros2
   mujoco_sim_interface
 )
 
@@ -109,54 +109,54 @@ link_directories(
 ################
 
 # Dummy Simulator Node
-add_executable(humanoid_centroidal_mpc_dummy_sim_node
+add_executable(LocoMani_wbDynPlan_dummy_sim_node
   src/CentroidalMpcDummySimNode.cpp
 )
-ament_target_dependencies(humanoid_centroidal_mpc_dummy_sim_node
+ament_target_dependencies(LocoMani_wbDynPlan_dummy_sim_node
   ${dependencies}
 )
-# target_link_libraries(humanoid_centroidal_mpc_dummy_sim_node
+# target_link_libraries(LocoMani_wbDynPlan_dummy_sim_node
 #   ${PROJECT_NAME}
 # )
-target_compile_options(humanoid_centroidal_mpc_dummy_sim_node PUBLIC ${FLAGS})
+target_compile_options(LocoMani_wbDynPlan_dummy_sim_node PUBLIC ${FLAGS})
 
 # MPC Node
-add_executable(humanoid_centroidal_mpc_sqp_node
+add_executable(LocoMani_wbDynPlan_sqp_node
   src/CentroidalMpcSqpNode.cpp
 )
-ament_target_dependencies(humanoid_centroidal_mpc_sqp_node
+ament_target_dependencies(LocoMani_wbDynPlan_sqp_node
   ${dependencies}
 )
-# target_link_libraries(humanoid_centroidal_mpc_sqp_node
+# target_link_libraries(LocoMani_wbDynPlan_sqp_node
 #   ${PROJECT_NAME}
 # )
-target_compile_options(humanoid_centroidal_mpc_sqp_node PUBLIC ${FLAGS})
+target_compile_options(LocoMani_wbDynPlan_sqp_node PUBLIC ${FLAGS})
 
 # MPC Sim Executable
-add_executable(humanoid_centroidal_mpc_sim
+add_executable(LocoMani_wbDynPlan_sim
   src/CentroidalMpcRobotSim.cpp
 )
-ament_target_dependencies(humanoid_centroidal_mpc_sim
+ament_target_dependencies(LocoMani_wbDynPlan_sim
   ${dependencies}
 )
-target_link_libraries(humanoid_centroidal_mpc_sim
+target_link_libraries(LocoMani_wbDynPlan_sim
         absl::flat_hash_map
         glfw
         GLEW
 )
-target_compile_options(humanoid_centroidal_mpc_sim PUBLIC ${FLAGS})
+target_compile_options(LocoMani_wbDynPlan_sim PUBLIC ${FLAGS})
 
 # Pose Command Node
-add_executable(humanoid_centroidal_mpc_pose_command_node
+add_executable(LocoMani_wbDynPlan_pose_command_node
   src/CentroidalMpcKeyboardPoseCommandNode.cpp
 )
-ament_target_dependencies(humanoid_centroidal_mpc_pose_command_node
+ament_target_dependencies(LocoMani_wbDynPlan_pose_command_node
   ${dependencies}
 )
-# target_link_libraries(humanoid_centroidal_mpc_pose_command_node
+# target_link_libraries(LocoMani_wbDynPlan_pose_command_node
 #   ${PROJECT_NAME}
 # )
-target_compile_options(humanoid_centroidal_mpc_pose_command_node PUBLIC ${FLAGS})
+target_compile_options(LocoMani_wbDynPlan_pose_command_node PUBLIC ${FLAGS})
 
 #############
 ## Testing ##
@@ -192,10 +192,10 @@ install(DIRECTORY include/${PROJECT_NAME}
 
 install(TARGETS
   test_visualizer
-  humanoid_centroidal_mpc_sim
-  humanoid_centroidal_mpc_sqp_node
-  humanoid_centroidal_mpc_dummy_sim_node
-  humanoid_centroidal_mpc_pose_command_node
+  LocoMani_wbDynPlan_sim
+  LocoMani_wbDynPlan_sqp_node
+  LocoMani_wbDynPlan_dummy_sim_node
+  LocoMani_wbDynPlan_pose_command_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

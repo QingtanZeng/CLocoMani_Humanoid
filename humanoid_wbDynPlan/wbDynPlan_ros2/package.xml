@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>humanoid_common_mpc_ros2</name>
+  <name>wbDynPlan_ros2</name>
   <version>0.0.0</version>
   <description>Ros2 interface for the humanoid common mpc</description>
 
@@ -23,7 +23,7 @@
   <depend>ocs2_ros2_interfaces</depend>
   <depend>ocs2_ros2_msgs</depend>
   <depend>ocs2_sqp</depend>
-  <depend>humanoid_common_mpc</depend>
+  <depend>wbDynPlan</depend>
   <depend>remote_control</depend>
   <depend>humanoid_mpc_msgs</depend>
 
@@ -34,7 +34,7 @@
   <test_depend>ament_cmake_xmllint</test_depend>
 
   <exec_depend>ros2launch</exec_depend>
-  <exec_depend>humanoid_common_mpc_pyutils</exec_depend>
+  <exec_depend>wbDynPlan_pyutils</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

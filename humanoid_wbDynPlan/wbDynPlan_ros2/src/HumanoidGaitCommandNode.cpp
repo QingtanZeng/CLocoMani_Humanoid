@@ -2,7 +2,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 
-#include "humanoid_common_mpc_ros2/gait/GaitKeyboardPublisher.h"
+#include "wbDynPlan_ros2/gait/GaitKeyboardPublisher.h"
 
 using namespace ocs2;
 using namespace ocs2::humanoid;

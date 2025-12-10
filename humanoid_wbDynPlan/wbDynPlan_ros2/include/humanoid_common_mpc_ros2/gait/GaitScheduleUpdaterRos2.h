@@ -8,7 +8,7 @@
 
 #include <ocs2_ros2_msgs/msg/mode_schedule.hpp>
 
-#include "humanoid_common_mpc/gait/GaitScheduleUpdater.h"
+#include "wbDynPlan/gait/GaitScheduleUpdater.h"
 
 namespace ocs2::humanoid {
 

@@ -1,15 +1,15 @@
 from ament_index_python.packages import get_package_share_directory
 
 import launch
-from humanoid_common_mpc_ros2.mpc_launch_config import MPCLaunchConfig
+from wbDynPlan_ros2.mpc_launch_config import MPCLaunchConfig
 from launch_ros.actions import Node
 
 
 def generate_launch_description():
 
     cfg = MPCLaunchConfig(
-        mpc_lib_pkg="humanoid_centroidal_mpc",
-        mpc_config_pkg="g1_centroidal_mpc",
+        mpc_lib_pkg="LocoMani_wbDynPlan",
+        mpc_config_pkg="g1_locomani",
         mpc_model_pkg="g1_description",
         urdf_rel_path="/urdf/g1_29dof.urdf",
         xml_rel_path="/urdf/g1_29dof.xml",

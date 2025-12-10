@@ -2,14 +2,14 @@ from ament_index_python.packages import get_package_share_directory
 from launch.substitutions import Command, LaunchConfiguration
 
 import launch
-from humanoid_common_mpc_ros2.mpc_launch_config import MPCLaunchConfig
+from wbDynPlan_ros2.mpc_launch_config import MPCLaunchConfig
 
 
 def generate_launch_description():
 
     cfg = MPCLaunchConfig(
-        mpc_lib_pkg="humanoid_centroidal_mpc",
-        mpc_config_pkg="g1_centroidal_mpc",
+        mpc_lib_pkg="LocoMani_wbDynPlan",
+        mpc_config_pkg="g1_locomani",
         mpc_model_pkg="g1_description",
         urdf_rel_path="/urdf/g1_29dof.urdf",
         robot_name="g1",
@@ -18,7 +18,7 @@ def generate_launch_description():
     )
 
     test_visualizer_node = launch_ros.actions.Node(
-        package="g1_centroidal_mpc_ros2",
+        package="g1_locomani_ros2",
         executable="test_visualizer",
         name="test_visualizer",
         # prefix=['x-terminal-emulator -e gdb -ex run --args'],

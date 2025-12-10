@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>humanoid_common_mpc_pyutils</name>
+  <name>wbDynPlan_pyutils</name>
   <version>0.0.0</version>
   <description>Contains python functionality for the mpc</description>
 

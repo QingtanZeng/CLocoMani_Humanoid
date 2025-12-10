@@ -14,8 +14,8 @@ from launch.substitutions import LaunchConfiguration
 def generate_launch_description():
 
     cfg = MPCLaunchConfig(
-        mpc_lib_pkg="humanoid_centroidal_mpc",
-        mpc_config_pkg="g1_centroidal_mpc",
+        mpc_lib_pkg="LocoMani_wbDynPlan",
+        mpc_config_pkg="g1_locomani",
         mpc_model_pkg="g1_description",
         urdf_rel_path="/urdf/g1_29dof.urdf",
         robot_name="g1",

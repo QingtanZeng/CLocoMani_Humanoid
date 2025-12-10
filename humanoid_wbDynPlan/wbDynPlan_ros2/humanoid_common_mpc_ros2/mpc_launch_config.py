@@ -41,7 +41,7 @@ class MPCLaunchConfig:
         self.mpc_lib_pkg_ros2: str = mpc_lib_pkg + "_ros2"
         self.mpc_config_pkg_dir: str = get_package_share_directory(mpc_config_pkg)
 
-        self.common_mpc_dir = get_package_share_directory("humanoid_common_mpc")
+        self.common_mpc_dir = get_package_share_directory("wbDynPlan")
         self.mpc_dir = get_package_share_directory(self.mpc_lib_pkg)
         self.mpc_ros2_dir = get_package_share_directory(self.mpc_lib_pkg_ros2)
 
@@ -63,7 +63,7 @@ class MPCLaunchConfig:
 
         ### RVIZ Config ###
         default_rviz_config_path = os.path.join(
-            get_package_share_directory("humanoid_common_mpc_ros2"),
+            get_package_share_directory("wbDynPlan_ros2"),
             "rviz/humanoid.rviz",
         )
 
@@ -128,7 +128,7 @@ class MPCLaunchConfig:
         )
 
         self.gait_keyboard_command_node = launch_ros.actions.Node(
-            package="humanoid_common_mpc_ros2",
+            package="wbDynPlan_ros2",
             executable="gait_keyboard_command_node",
             prefix=self.always_terminal_prefix,
             name="gait_keyboard_command_node",
@@ -140,7 +140,7 @@ class MPCLaunchConfig:
         )
 
         self.velocity_keyboard_command_node = launch_ros.actions.Node(
-            package="humanoid_common_mpc_ros2",
+            package="wbDynPlan_ros2",
             executable="velocity_keyboard_command_node",
             prefix=self.always_terminal_prefix,
             name="velocity_keyboard_command_node",
@@ -242,7 +242,7 @@ class MPCLaunchConfig:
         )
 
         self.mpc_observation_logger_node = launch_ros.actions.Node(
-            package="humanoid_common_mpc_pyutils",
+            package="wbDynPlan_pyutils",
             executable="mpc_observation_logger",
             name="mpc_observation_logger",
             prefix=self.always_terminal_prefix,

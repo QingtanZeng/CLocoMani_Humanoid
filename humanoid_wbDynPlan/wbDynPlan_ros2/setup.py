@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = "humanoid_common_mpc_ros2"
+package_name = "wbDynPlan_ros2"
 
 setup(
     name=package_name,

@@ -3,7 +3,7 @@
 // Pinocchio forward declarations must be included first
 #include <pinocchio/fwd.hpp>
 
-#include "humanoid_common_mpc_ros2/visualization/HumanoidVisualizerRos2Interface.h"
+#include "wbDynPlan_ros2/visualization/HumanoidVisualizerRos2Interface.h"
 
 namespace ocs2::humanoid {
 

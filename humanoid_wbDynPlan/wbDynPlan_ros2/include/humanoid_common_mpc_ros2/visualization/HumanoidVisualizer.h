@@ -17,10 +17,10 @@
 #include <ocs2_ros2_interfaces/visualization/VisualizationColors.h>
 #include <ocs2_ros2_msgs/msg/mpc_observation.hpp>
 
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
-#include "humanoid_common_mpc/common/Types.h"
-#include "humanoid_common_mpc/constraint/FootCollisionConstraint.h"
-#include "humanoid_common_mpc_ros2/visualization/EquivalentContactCornerForcesVisualizer.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
+#include "wbDynPlan/common/Types.h"
+#include "wbDynPlan/constraint/FootCollisionConstraint.h"
+#include "wbDynPlan_ros2/visualization/EquivalentContactCornerForcesVisualizer.h"
 
 namespace ocs2::humanoid {
 

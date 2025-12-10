@@ -1,15 +1,15 @@
 
 /* Computational Legged Robots: Planning and Control  */
 
-#include "humanoid_common_mpc_ros2/visualization/EquivalentContactCornerForcesVisualizer.h"
+#include "wbDynPlan_ros2/visualization/EquivalentContactCornerForcesVisualizer.h"
 
 #include <ocs2_ros2_interfaces/visualization/VisualizationColors.h>
 #include <ocs2_ros2_interfaces/visualization/VisualizationHelpers.h>
 
-#include <humanoid_common_mpc/common/ModelSettings.h>
-#include <humanoid_common_mpc/contact/ContactRectangle.h>
-#include <humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h>
-#include <humanoid_common_mpc/pinocchio_model/PinocchioFrameConversions.h>
+#include <wbDynPlan/common/ModelSettings.h>
+#include <wbDynPlan/contact/ContactRectangle.h>
+#include <wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h>
+#include <wbDynPlan/pinocchio_model/PinocchioFrameConversions.h>
 
 namespace ocs2::humanoid {
 

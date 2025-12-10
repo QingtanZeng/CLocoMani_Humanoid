@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>g1_centroidal_mpc</name>
+  <name>g1_locomani</name>
   <version>0.0.0</version>
   <description>Unitree G1 motion planner package</description>
 
@@ -11,7 +11,7 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
-  <depend>humanoid_centroidal_mpc_ros2</depend>
+  <depend>LocoMani_wbDynPlan_ros2</depend>
   <depend>g1_description</depend>
   <depend>pinocchio</depend>
 

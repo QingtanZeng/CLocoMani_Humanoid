@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(g1_centroidal_mpc)
+project(g1_locomani)
 
 if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     add_compile_options(-Wall -Wextra -Wpedantic -Werror=return-type)
@@ -11,7 +11,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(ament_cmake REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(humanoid_centroidal_mpc_ros2 REQUIRED)
+find_package(LocoMani_wbDynPlan_ros2 REQUIRED)
 
 find_package(GTest REQUIRED)
 
@@ -55,7 +55,7 @@ set(dependencies
   ament_cmake
   ament_index_cpp
   rclcpp
-  humanoid_centroidal_mpc_ros2
+  LocoMani_wbDynPlan_ros2
 )
 
 add_executable(test_pinocchio_model

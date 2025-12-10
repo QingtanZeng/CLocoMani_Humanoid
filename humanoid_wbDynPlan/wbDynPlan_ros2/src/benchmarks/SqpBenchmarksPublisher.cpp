@@ -1,6 +1,6 @@
 /* Computational Legged Robots: Planning and Control  */
 
-#include <humanoid_common_mpc_ros2/benchmarks/SqpBenchmarksPublisher.h>
+#include <wbDynPlan_ros2/benchmarks/SqpBenchmarksPublisher.h>
 
 namespace ocs2::humanoid {
 

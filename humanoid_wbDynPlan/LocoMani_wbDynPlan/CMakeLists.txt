@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(humanoid_centroidal_mpc)
+project(LocoMani_wbDynPlan)
 
 if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     add_compile_options(-Wall -Wextra -Wpedantic -Werror=return-type)
@@ -18,7 +18,7 @@ find_package(ocs2_ddp REQUIRED)
 find_package(ocs2_mpc REQUIRED)
 find_package(ocs2_sqp REQUIRED)
 find_package(ocs2_pinocchio_interface REQUIRED)
-find_package(humanoid_common_mpc REQUIRED)
+find_package(wbDynPlan REQUIRED)
 find_package(robot_model REQUIRED)
 
 find_package(GTest REQUIRED)
@@ -64,7 +64,7 @@ set(dependencies
   ocs2_mpc
   ocs2_sqp
   ocs2_pinocchio_interface
-  humanoid_common_mpc
+  wbDynPlan
   robot_model
 )
 

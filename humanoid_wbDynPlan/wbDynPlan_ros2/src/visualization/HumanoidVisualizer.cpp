@@ -12,15 +12,15 @@
 #include <visualization_msgs/msg/marker.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
 
-#include "humanoid_common_mpc_ros2/visualization/HumanoidVisualizer.h"
+#include "wbDynPlan_ros2/visualization/HumanoidVisualizer.h"
 
 #include <ocs2_core/misc/LinearInterpolation.h>
 #include <ocs2_robotic_tools/common/RotationTransforms.h>
 #include <ocs2_ros2_interfaces/visualization/VisualizationHelpers.h>
 
-#include <humanoid_common_mpc/common/ModelSettings.h>
-#include <humanoid_common_mpc/gait/MotionPhaseDefinition.h>
-#include <humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h>
+#include <wbDynPlan/common/ModelSettings.h>
+#include <wbDynPlan/gait/MotionPhaseDefinition.h>
+#include <wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h>
 
 // URDF related
 #include <urdf/model.h>

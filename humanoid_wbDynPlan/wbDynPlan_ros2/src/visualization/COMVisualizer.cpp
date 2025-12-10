@@ -18,7 +18,7 @@
 #include "visualization_msgs/msg/marker.hpp"
 #include "visualization_msgs/msg/marker_array.hpp"
 
-#include "humanoid_common_mpc_ros2/visualization/COMVisualizer.hpp"
+#include "wbDynPlan_ros2/visualization/COMVisualizer.hpp"
 
 namespace ocs2::humanoid {
 

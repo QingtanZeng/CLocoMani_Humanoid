@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>humanoid_centroidal_mpc</name>
+  <name>LocoMani_wbDynPlan</name>
   <version>0.0.0</version>
   <description>Humanoid motion planner package</description>
 
@@ -22,7 +22,7 @@
   <depend>pinocchio</depend>
   <depend>robot_model</depend>
 
-  <depend>humanoid_common_mpc</depend>
+  <depend>wbDynPlan</depend>
 
   <test_depend>ament_cmake_gtest</test_depend>
   <test_depend>ament_cmake_clang_format</test_depend>

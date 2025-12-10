@@ -6,7 +6,7 @@
 
 #include <mutex>
 
-#include "humanoid_common_mpc/reference_manager/ProceduralMpcMotionManager.h"
+#include "wbDynPlan/reference_manager/ProceduralMpcMotionManager.h"
 #include "humanoid_mpc_msgs/msg/walking_velocity_command.hpp"
 
 namespace ocs2::humanoid {

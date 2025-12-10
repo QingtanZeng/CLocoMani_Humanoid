@@ -179,26 +179,13 @@ launch-g1-dummy-sim:
 	cd ${build_dir} && \
 	source ${ros_source_file} && \
 	source install/setup.bash && \
-	ros2 launch g1_centroidal_mpc dummy_sim.launch.py 
+	ros2 launch g1_locomani dummy_sim.launch.py 
 
 launch-g1-sim:
 	cd ${build_dir} && \
 	source ${ros_source_file} && \
 	source install/setup.bash && \
-	ros2 launch g1_centroidal_mpc mujoco_sim.launch.py 
-
-
-launch-wb-g1-dummy-sim:
-	cd ${build_dir} && \
-	source ${ros_source_file} && \
-	source install/setup.bash && \
-	ros2 launch g1_wb_mpc dummy_sim.launch.py 
-
-launch-wb-g1-sim:
-	cd ${build_dir} && \
-	source ${ros_source_file} && \
-	source install/setup.bash && \
-	ros2 launch g1_wb_mpc mujoco_sim.launch.py 
+	ros2 launch g1_locomani mujoco_sim.launch.py 
 
 run-ocs2-tests:
 	echo "make sure you call 'make build-relwithdebinfo' to build the tests before running them." && \
@@ -213,6 +200,6 @@ run-mpc-tests:
 	cd ${build_dir} && \
 	source ${ros_source_file} && \
 	source install/setup.bash && \
-	colcon test --event-handlers console_direct+ --return-code-on-test-failure --packages-select humanoid_common_mpc \
-	humanoid_common_mpc_ros2 humanoid_centroidal_mpc humanoid_centroidal_mpc_ros2 humanoid_wb_mpc
+	colcon test --event-handlers console_direct+ --return-code-on-test-failure --packages-select wbDynPlan \
+	wbDynPlan_ros2 LocoMani_wbDynPlan LocoMani_wbDynPlan_ros2 
 

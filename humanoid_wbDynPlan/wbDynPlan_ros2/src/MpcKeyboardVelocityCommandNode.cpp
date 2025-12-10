@@ -5,7 +5,7 @@
 #include <rclcpp/rclcpp.hpp>
 
 #include <ocs2_core/misc/LoadData.h>
-#include "humanoid_common_mpc_ros2/ros_comm/VelocityCommandKeyboardPublisher.h"
+#include "wbDynPlan_ros2/ros_comm/VelocityCommandKeyboardPublisher.h"
 
 using namespace ocs2;
 using namespace ocs2::humanoid;

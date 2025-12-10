@@ -4,7 +4,7 @@
 
 #include <mutex>
 
-#include "humanoid_common_mpc_ros2/ros_comm/Ros2ProceduralMpcMotionManager.h"
+#include "wbDynPlan_ros2/ros_comm/Ros2ProceduralMpcMotionManager.h"
 
 namespace ocs2::humanoid {
 

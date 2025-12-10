@@ -5,8 +5,8 @@
 #include <ocs2_ros2_interfaces/mrt/MRT_ROS_Interface.h>
 #include <ocs2_ros2_msgs/msg/mpc_flattened_controller.hpp>
 
-#include "humanoid_common_mpc_ros2/ros_comm/MRTPolicySubscriber.h"
-#include "humanoid_common_mpc_ros2/visualization/HumanoidVisualizer.h"
+#include "wbDynPlan_ros2/ros_comm/MRTPolicySubscriber.h"
+#include "wbDynPlan_ros2/visualization/HumanoidVisualizer.h"
 
 namespace ocs2::humanoid {
 

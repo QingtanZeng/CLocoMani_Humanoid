@@ -1,6 +1,6 @@
 /* Computational Legged Robots: Planning and Control  */
 
-#include "humanoid_common_mpc_ros2/gait/GaitKeyboardPublisher.h"
+#include "wbDynPlan_ros2/gait/GaitKeyboardPublisher.h"
 
 #include <algorithm>
 #include <iostream>
@@ -8,7 +8,7 @@
 #include <ocs2_core/misc/CommandLine.h>
 #include <ocs2_core/misc/LoadData.h>
 
-#include "humanoid_common_mpc_ros2/gait/ModeSequenceTemplateRos.h"
+#include "wbDynPlan_ros2/gait/ModeSequenceTemplateRos.h"
 
 namespace ocs2::humanoid {
 

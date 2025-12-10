@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(humanoid_common_mpc_ros2)
+project(wbDynPlan_ros2)
 
 if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic -Werror=return-type)
@@ -23,7 +23,7 @@ find_package(ocs2_ros2_interfaces REQUIRED)
 find_package(ocs2_ros2_msgs REQUIRED)
 find_package(ocs2_sqp REQUIRED)
 find_package(pinocchio REQUIRED)
-find_package(humanoid_common_mpc REQUIRED)
+find_package(wbDynPlan REQUIRED)
 find_package(humanoid_mpc_msgs REQUIRED)
 
 
@@ -69,7 +69,7 @@ set(dependencies
     sensor_msgs
     ocs2_ros2_interfaces
     ocs2_ros2_msgs
-    humanoid_common_mpc
+    wbDynPlan
     ocs2_sqp
     humanoid_mpc_msgs
 )

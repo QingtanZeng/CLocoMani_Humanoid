@@ -1,6 +1,6 @@
 /* Computational Legged Robots: Planning and Control  */
 
-#include "humanoid_common_mpc_ros2/ros_comm/MRTPolicySubscriber.h"
+#include "wbDynPlan_ros2/ros_comm/MRTPolicySubscriber.h"
 
 #include <ocs2_core/control/FeedforwardController.h>
 #include <ocs2_core/control/LinearController.h>

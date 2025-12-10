@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = "humanoid_centroidal_mpc_ros2"
+package_name = "LocoMani_wbDynPlan_ros2"
 
 setup(
     name=package_name,
@@ -11,7 +11,7 @@ setup(
         ("share/" + package_name, ["package.xml"]),
     ],
     install_requires=["setuptools"],
-    install_requires=["humanoid_common_mpc_ros2"],
+    install_requires=["wbDynPlan_ros2"],
     zip_safe=True,
     maintainer="TODO",
     maintainer_email="TODO@email.com",

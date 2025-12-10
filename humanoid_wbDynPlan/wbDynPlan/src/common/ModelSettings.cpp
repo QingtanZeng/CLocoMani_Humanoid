@@ -1,6 +1,6 @@
 /* Computational Legged Robots: Planning and Control  */
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
+#include "wbDynPlan/common/ModelSettings.h"
 
 #include <boost/property_tree/info_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
@@ -10,7 +10,7 @@
 #include <ocs2_core/misc/LoadData.h>
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
 
-#include "humanoid_common_mpc/pinocchio_model/createPinocchioModel.h"
+#include "wbDynPlan/pinocchio_model/createPinocchioModel.h"
 
 namespace ocs2::humanoid {
 
