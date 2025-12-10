@@ -1,3 +1,8 @@
+# Remove accidental build stuff put in here
+build/
+log/
+install/
+
 # Prerequisites
 *.d
 
@@ -5,26 +10,15 @@
 *.slo
 *.lo
 *.o
-*.obj
 
 # Precompiled Headers
 *.gch
 *.pch
 
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
@@ -37,5 +31,32 @@
 *.out
 *.app
 
-# debug information files
-*.dwo
+# vscode
+.vscode/*
+*/.vscode/*
+*.code-workspace
+
+# vim
+**/.cache
+
+# idea
+**/.idea/
+**/cmake-build-*/
+
+# Local History for Visual Studio Code
+.history/
+
+**/__pycache__/**
+
+# MuJoCo log
+*/MUJOCO_LOG.TXT
+*mjData.bin
+
+# python
+.venv/*
+**/.venv/*
+**/*.egg-info/
+
+**/.gdb_history
+
+.git-completion.bash

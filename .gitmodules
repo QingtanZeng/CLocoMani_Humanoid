@@ -1,0 +1,12 @@
+[submodule "lib/catkin"]
+	path = lib/catkin
+	url = https://github.com/ros/catkin.git
+[submodule "lib/magic_enum"]
+	path = lib/magic_enum
+	url = https://github.com/Neargye/magic_enum.git
+[submodule "lib/cmake_modules"]
+	path = lib/cmake_modules
+	url = https://github.com/ros/cmake_modules.git
+[submodule "lib/mujoco"]
+	path = lib/mujoco
+	url = https://github.com/google-deepmind/mujoco.git

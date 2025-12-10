@@ -1,0 +1,55 @@
+services:
+  wb-mpc-dev:
+    build: 
+      context: .    # 当前目录(docker/)作为构建上下文
+      dockerfile: Dockerfile
+      # 传入当前用户的 UID/GID
+      args:
+        HOST_UID: ${HOST_UID:-1000}
+        HOST_GID: ${HOST_GID:-1000}
+        PYTHON_VERSION: "3.12"
+        Humanoid_LocoManipulation_DIR: "/Humanoid_LocoManipulation_dev"
+    
+    image: wb-humanoid-mpc:jazzy-dev
+    container_name: dev_legrobot
+    
+    # [核心修改] 使用 Host 网络模式，性能最佳，X11 最稳
+    network_mode: host
+    
+    # 注意：Host 模式下不需要 ports 映射，容器内的 Port 2222 直接就是宿主机的 Port 2222
+    # ports:
+    #   - "2222:22"  <-- 删除此行
+
+    environment:
+      - DISPLAY=${DISPLAY}             
+      - QT_X11_NO_MITSHM=1             
+      - NVIDIA_DRIVER_CAPABILITIES=all 
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+    
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # [修改点] 映射您的项目路径
+      - /home/zengqt/Projects_Linux/Robot/wb_humanoid/Humanoid_LocoManipulation:${Humanoid_LocoManipulation_DIR:-/Humanoid_LocoManipulation_dev}
+      - /home/zengqt/Projects_Linux/Robot/wb_humanoid/Humanoid_LocoManipulation_release:/Humanoid_LocoManipulation_dev_release
+      # 建议：为了 SSH 免密登录，可以将宿主机的公钥映射进去
+      # - /home/zengqt/.ssh/id_rsa.pub:/home/dev/.ssh/authorized_keys:ro
+      # Deliver configuration files
+      - ${HOME}/.gitconfig:/home/dev/.gitconfig:ro
+      # Add Volume for vscode configuration and extensions
+      - vscode_data:/home/dev/.vscode-server
+
+    command: /bin/bash
+    tty: true
+    stdin_open: true
+
+# [必须添加] 顶级 volumes 定义
+volumes:
+  vscode_data:
