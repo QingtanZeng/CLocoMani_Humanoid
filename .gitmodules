@@ -10,3 +10,9 @@
 [submodule "lib/mujoco"]
 	path = lib/mujoco
 	url = https://github.com/google-deepmind/mujoco.git
+[submodule "lib/qoco"]
+	path = lib/qoco
+	url = https://github.com/qoco-org/qoco.git
+[submodule "lib/qocogen"]
+	path = lib/qocogen
+	url = https://github.com/qoco-org/qocogen.git

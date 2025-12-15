@@ -100,6 +100,7 @@ void LocoManiMpcInterface::LocoManiMpcInterface(const std::string& taskFile,
 }
 
 void LocoManiMpcInterface::setupOptimalControlProblem() {
+  // read OCP Problem from task.info
   HumanoidCostConstraintFactory factory = 
     HumanoidCostConstraintFactory(taskFile_, referenceFile_, *referenceManagerPtr_, *pinocchioInterfacePtr_, 
                                   *mpcRobotModelPtr_, *mpcRobotModelADPtr_, modelSettings_, verbose_);
@@ -107,17 +108,28 @@ void LocoManiMpcInterface::setupOptimalControlProblem() {
 // reset Optimal Control Problem
     problemPtr_.reset(new OptimalControlProblem);
 
-// dynamics
+// 1. dynamics
 std::unique_ptr<SystemDynamicsBase> dynamicsPtr;
 const std::string modelname = "locomani";
 dynamicsPtr.reset(new LocoManiDynamicsAD(*pinocchioInterfacePtr_, centroidalModelInfo_, modelname, modelSettings_));
 
 problemPtr_->dynamicsPtr = std::move(dynamicsPtr);
 
-// Cost terms
-problemPtr_->costPtr
+// 2. Cost terms
+// 2.1 add Q ,R 
+problemPtr_->costPtr->add("stateInputdQuadraticCost", factory.getStateInputQuadraticCost());
+// 2.2 add terminal state cost
+problemPtr_->finalCostPtr->add("terminalCost", factory.getTerminalCost());
+
+// 2.3 Foot End-effctor Kinematics Tracking Cost
 
 
+// 2.4 Hand End-effctor Kinematics Tracking Cost
+
+
+// 3. Constraint terms
+// Joint Limits: angle and velocity
+problemPtr_->
 
 
 }
