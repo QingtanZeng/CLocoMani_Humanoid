@@ -80,23 +80,42 @@ void LocoManiMpcInterface::LocoManiMpcInterface(const std::string& taskFile,
                                     taskFile, urdfFile, modelSettings_, false)));
   centroidalModelInfo_ = centroidal_model::createCentroidalModelInfo(
     *pinocchioInterfacePtr_, centroidal_model::loadCentroidalType(taskFile), 
-    const ocs2::vector_t &nominalJointAngles, 
-    const std::vector<...> &threeDofContactNames, 
-    const std::vector<...> &sixDofContactNames)
+    centroidal_model::loadCentroidalModelState(pinocchioInterfacePtr_.getModel().nq-6, referenceFile),
+    modelSettings_.contactNames3Dof,
+    modelSettings_.contactNames6Dof);
+
+  std::cout << "centroidalModelInfo_.numSixDofContacts: " << centroidalModelInfo_.numSixDofContacts << std::endl;
+  for (int i = 0; i < centroidalModelInfo_.numSixDofContacts; i++) {
+    std::cout << "frameIndices: " << centroidalModelInfo_.endEffectorFrameIndices[i] << std::endl;
+  }
 
 
+  // initial state
+  initialState_.setZero(centroidalModelInfo_.stateDim);
+  loadData::loadEigenMatrix(taskFile, "initialState", initialState_);
 
-
-
+  if(setupOCP){
+    setupOptimalControlProblem();
+  }
 }
 
 void LocoManiMpcInterface::setupOptimalControlProblem() {
-
+  HumanoidCostConstraintFactory factory = 
+    HumanoidCostConstraintFactory(taskFile_, referenceFile_, *referenceManagerPtr_, *pinocchioInterfacePtr_, 
+                                  *mpcRobotModelPtr_, *mpcRobotModelADPtr_, modelSettings_, verbose_);
 
 // reset Optimal Control Problem
-    problemPtr_.reset(new )
+    problemPtr_.reset(new OptimalControlProblem);
 
+// dynamics
+std::unique_ptr<SystemDynamicsBase> dynamicsPtr;
+const std::string modelname = "locomani";
+dynamicsPtr.reset(new LocoManiDynamicsAD(*pinocchioInterfacePtr_, centroidalModelInfo_, modelname, modelSettings_));
 
+problemPtr_->dynamicsPtr = std::move(dynamicsPtr);
+
+// Cost terms
+problemPtr_->costPtr
 
 
 
