@@ -120,14 +120,14 @@ std::unique_ptr<StateCost> HumanoidCostConstraintFactory::getFootCollisionConstr
 /******************************************************************************************************/
 /******************************************************************************************************/
 
-std::unique_ptr<StateCost> HumanoidCostConstraintFactory::getJointLimitsConstraint() const {
+std::unique_ptr<StateConstraint> HumanoidCostConstraintFactory::getJointLimitsConstraint() const {
   boost::property_tree::ptree pt;
   boost::property_tree::read_info(taskFile_, pt);
   const std::string prefix = "jointLimits.";
 
   PieceWisePolynomialBarrierPenalty::Config barrierPenaltyConfig;
 
-  if (verbose_) {
+/*   if (verbose_) {
     std::cerr << "\n #### Joint Limit Barrier Penalty Config: ";
     std::cerr << "\n #### "
                  "============================================================="
@@ -139,14 +139,14 @@ std::unique_ptr<StateCost> HumanoidCostConstraintFactory::getJointLimitsConstrai
     std::cerr << " #### "
                  "============================================================="
                  "================\n";
-  }
+  } */
 
   std::cout << "Initialized joint limits constraint with zero crossing cost " << barrierPenaltyConfig.getZeroCrossingValue() << "."
             << std::endl;
 
   std::pair<vector_t, vector_t> jointLimits = readPinocchioJointLimits(*pinocchioInterfacePtr_, mpcRobotModelPtr_->modelSettings);
 
-  return std::unique_ptr<StateCost>(new JointLimitsSoftConstraint(jointLimits, barrierPenaltyConfig, *mpcRobotModelPtr_));
+  return std::unique_ptr<StateConstraint>(new JointLimitsSoftConstraint(jointLimits, barrierPenaltyConfig, *mpcRobotModelPtr_));
 }
 
 /******************************************************************************************************/

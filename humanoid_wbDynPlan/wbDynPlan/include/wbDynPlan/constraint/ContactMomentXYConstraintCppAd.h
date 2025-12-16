@@ -30,12 +30,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
+#include <ocs2_core/constraint/StateInputConstraintCppAd.h>
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
-
-#include <ocs2_core/constraint/StateInputConstraint.h>
-#include <ocs2_core/cost/StateCost.h>
-#include <ocs2_core/cost/StateInputCost.h>
-#include <ocs2_robotic_tools/end_effector/EndEffectorKinematics.h>
 
 #include "humanoid_common_mpc/common/ModelSettings.h"
 #include "humanoid_common_mpc/common/MpcRobotModelBase.h"
@@ -49,46 +45,41 @@ namespace ocs2::humanoid {
  * Implements the constraint h(t,x,u) >= 0 to constrain the contact moment in the x-y plane.
  */
 
-class HumanoidCostConstraintFactory {
+class ContactMomentXYConstraintCppAd final : public StateInputConstraintCppAd {
  public:
-  HumanoidCostConstraintFactory(const std::string& taskFile,
-                                const std::string& referenceFile,
-                                const SwitchedModelReferenceManager& referenceManager,
-                                const PinocchioInterface& pinocchioInterface,
-                                const MpcRobotModelBase<scalar_t>& mpcRobotModel,
-                                const MpcRobotModelBase<ad_scalar_t>& mpcRobotModelAD,
-                                const ModelSettings& modelSettings,
-                                bool verbose = false);
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+  ContactMomentXYConstraintCppAd(const SwitchedModelReferenceManager& referenceManager,
+                                 const ContactRectangle& contactRectangle,
+                                 size_t contactPointIndex,
+                                 const PinocchioInterface& pinocchioInterface,
+                                 const MpcRobotModelBase<ad_scalar_t>& mpcRobotModel,
+                                 std::string costName,
+                                 const ModelSettings& modelSettings);
 
-  ~HumanoidCostConstraintFactory() = default;
-  HumanoidCostConstraintFactory(const HumanoidCostConstraintFactory& other) = delete;
+  ~ContactMomentXYConstraintCppAd() override = default;
+  ContactMomentXYConstraintCppAd* clone() const override { return new ContactMomentXYConstraintCppAd(*this); }
 
-  std::unique_ptr<StateInputCost> getStateInputQuadraticCost() const;
-
-  std::unique_ptr<StateCost> getTerminalCost() const;
-
-  // Foot Collision Constraint (as soft cost in sqp)
-  std::unique_ptr<StateCost> getFootCollisionConstraint() const;
-  // Joint Limits: x_angle, u_velocity, torque(u)
-  std::unique_ptr<StateConstraint> getJointLimitsConstraint() const;
-
-  std::unique_ptr<StateInputCost> getContactMomentXYConstraint(size_t contactPointIndex, const std::string& name) const;
-
-  std::unique_ptr<StateInputConstraint> getZeroWrenchConstraint(size_t contactPointIndex) const;
-// Friction Cone Constraint
-  std::unique_ptr<StateInputConstraint> getFrictionForceConeConstraint(size_t contactPointIndex) const;
-
-  std::unique_ptr<StateInputCost> getExternalTorqueQuadraticCost(size_t contactPointIndex) const;
+  bool isActive(scalar_t time) const override;
+  void setActive(bool isActive) override { isActive_ = isActive; }
+  bool getActive() const override { return isActive_; }
+  size_t getNumConstraints(scalar_t time) const override { return numConstraints_; };
 
  private:
-  std::string taskFile_;
-  std::string referenceFile_;
+  ContactMomentXYConstraintCppAd(const ContactMomentXYConstraintCppAd& other);
+
+  ad_vector_t constraintFunction(ad_scalar_t time,
+                                 const ad_vector_t& state,
+                                 const ad_vector_t& input,
+                                 const ad_vector_t& parameters) const override;
+
   const SwitchedModelReferenceManager* referenceManagerPtr_;
-  const PinocchioInterface* pinocchioInterfacePtr_;
-  const MpcRobotModelBase<scalar_t>* mpcRobotModelPtr_;
-  const MpcRobotModelBase<ad_scalar_t>* mpcRobotModelADPtr_;
-  const ModelSettings& modelSettings_;
-  const bool verbose_;
+  const MpcRobotModelBase<ad_scalar_t>* mpcRobotModelPtr_;
+  const ContactRectangle contactRectangle_;
+  const size_t contactPointIndex_;
+  PinocchioInterfaceCppAd pinocchioInterfaceCppAd_;
+
+  const static size_t numConstraints_ = 4;
+  bool isActive_ = true;
 };
 
 }  // namespace ocs2::humanoid

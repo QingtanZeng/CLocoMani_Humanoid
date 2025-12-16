@@ -61,7 +61,8 @@ using ad_quaternion_t = QUATERNION_T<ad_scalar_t>;
 */
 /******************************************************************************************************/
 
-constexpr size_t N_CONTACTS = 2;
+constexpr size_t N_FOOTCONTACTS = 2;
+constexpr size_t N_HANDCONTACTS = 2;
 
 template <typename T>
 using feet_array_t = std::array<T, N_CONTACTS>;

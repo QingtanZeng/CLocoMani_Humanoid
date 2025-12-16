@@ -59,7 +59,7 @@ class LocoManiMpcInterface final : public RobotInterface{
   const CentroidalWeightCompInitializer& getInitializer() const override { return *initializerPtr_; }
   std::shared_ptr<ReferenceManagerInterface> getReferenceManagerPtr() const override { return referenceManagerPtr_; }
 
-  const CentroidalMpcRobotModel<scalar_t>& getMpcRobotModel() const { return *mpcRobotModelPtr_; }
+  const CentroidalMpcRobotModel<scalar_t>& getMpcRobotModel() const { return *ocpRobotDynSysPtr_; }
   const CentroidalMpcRobotModel<ad_scalar_t>& getMpcRobotModelAD() const { return *mpcRobotModelADPtr_; }
 
   std::vector<std::string> getCostNames() const;
@@ -97,8 +97,8 @@ class LocoManiMpcInterface final : public RobotInterface{
   std::shared_ptr<SwitchedModelReferenceManager> referenceManagerPtr_;
 
   // OCP Dynamic System
-  std::unique_ptr<LocoManiMpcRobotModel<scalar_t>> OcpRobotDynSysPtr_;
-  std::unique_ptr<LocoManiMpcRobotModel<ad_scalar_t>> OcpRobotDynSysADPtr_;
+  std::unique_ptr<LocoManiMpcRobotModel<scalar_t>> ocpRobotDynSysPtr_;
+  std::unique_ptr<LocoManiMpcRobotModel<ad_scalar_t>> ocpRobotDynSysADPtr_;
 
   // MPC Arthitecture
   rollout::Settings rolloutSettings_;

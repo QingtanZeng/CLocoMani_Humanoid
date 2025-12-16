@@ -22,7 +22,7 @@ namespace ocs2::humanoid{
 /******************************************************************************************************/
 /* State Vector definition
 
-  Define the state vector x = [h, q_b, q_j]^T
+  Define the state vector x = [h, q_b, q_j, v_t]^T
 
     Centroidal momentum h = [vcom_x, vcom_y, vcom_z, L_x / mass, L_y / mass, L_z / mass]^T
     Base pose q_b = [p_base_x, p_base_y, p_base_z, theta_base_z, theta_base_y, theta_base_x]
@@ -34,7 +34,7 @@ namespace ocs2::humanoid{
 /******************************************************************************************************/
 /* Input Vector definition
 
-  Define the input vector u = [W_l, W_r, q_dot_j]^T
+  Define the input vector u = [W_l, W_r, H_l, H_r, q_dot_j]^T
 
     Left contact Wrench W_l in inertial frame
     Right contact Wrench W_r in inertial frame

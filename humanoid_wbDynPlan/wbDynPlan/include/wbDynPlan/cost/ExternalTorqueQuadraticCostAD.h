@@ -1,6 +1,5 @@
 /******************************************************************************
 Copyright (c) 2025, Manuel Yves Galliker. All rights reserved.
-Copyright (c) 2024, 1X Technologies. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -30,65 +29,68 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
+#include <ocs2_core/cost/StateInputGaussNewtonCostAd.h>
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
-
-#include <ocs2_core/constraint/StateInputConstraint.h>
-#include <ocs2_core/cost/StateCost.h>
-#include <ocs2_core/cost/StateInputCost.h>
 #include <ocs2_robotic_tools/end_effector/EndEffectorKinematics.h>
+#include <pinocchio/algorithm/frames.hpp>
 
 #include "humanoid_common_mpc/common/ModelSettings.h"
 #include "humanoid_common_mpc/common/MpcRobotModelBase.h"
-#include "humanoid_common_mpc/common/Types.h"
-#include "humanoid_common_mpc/contact/ContactRectangle.h"
 #include "humanoid_common_mpc/reference_manager/SwitchedModelReferenceManager.h"
+
+#include "humanoid_common_mpc/cost/EndEffectorKinematicCostHelpers.h"
 
 namespace ocs2::humanoid {
 
-/**
- * Implements the constraint h(t,x,u) >= 0 to constrain the contact moment in the x-y plane.
- */
-
-class HumanoidCostConstraintFactory {
+class ExternalTorqueQuadraticCostAD : public ocs2::StateInputCostGaussNewtonAd {
  public:
-  HumanoidCostConstraintFactory(const std::string& taskFile,
-                                const std::string& referenceFile,
+  struct Config {
+    std::vector<std::string> activeJointNames;
+    vector_t weights;
+  };
+
+  ExternalTorqueQuadraticCostAD(size_t endEffectorIndex,
+                                Config config,
                                 const SwitchedModelReferenceManager& referenceManager,
                                 const PinocchioInterface& pinocchioInterface,
-                                const MpcRobotModelBase<scalar_t>& mpcRobotModel,
                                 const MpcRobotModelBase<ad_scalar_t>& mpcRobotModelAD,
-                                const ModelSettings& modelSettings,
-                                bool verbose = false);
+                                const ModelSettings& modelSettings);
 
-  ~HumanoidCostConstraintFactory() = default;
-  HumanoidCostConstraintFactory(const HumanoidCostConstraintFactory& other) = delete;
+  ~ExternalTorqueQuadraticCostAD() override = default;
+  ExternalTorqueQuadraticCostAD* clone() const override { return new ExternalTorqueQuadraticCostAD(*this); }
 
-  std::unique_ptr<StateInputCost> getStateInputQuadraticCost() const;
+  virtual vector_t getParameters(scalar_t time,
+                                 const TargetTrajectories& targetTrajectories,
+                                 const PreComputation& preComputation) const override;
 
-  std::unique_ptr<StateCost> getTerminalCost() const;
+  bool isActive(scalar_t time) const override;
+  void setActive(bool active) { isActive_ = active; }
+  bool getActive() const { return isActive_; }
 
-  // Foot Collision Constraint (as soft cost in sqp)
-  std::unique_ptr<StateCost> getFootCollisionConstraint() const;
-  // Joint Limits: x_angle, u_velocity, torque(u)
-  std::unique_ptr<StateConstraint> getJointLimitsConstraint() const;
+  void getWeights(vector_t& weights) const { weights = sqrtWeights_.cwiseProduct(sqrtWeights_); }
+  void setWeights(const vector_t& weights) { sqrtWeights_ = weights.cwiseSqrt(); }
 
-  std::unique_ptr<StateInputCost> getContactMomentXYConstraint(size_t contactPointIndex, const std::string& name) const;
+  static ExternalTorqueQuadraticCostAD::Config loadConfigFromFile(const std::string& filename,
+                                                                  const std::string& fieldname,
+                                                                  bool verbose = true);
 
-  std::unique_ptr<StateInputConstraint> getZeroWrenchConstraint(size_t contactPointIndex) const;
-// Friction Cone Constraint
-  std::unique_ptr<StateInputConstraint> getFrictionForceConeConstraint(size_t contactPointIndex) const;
+ protected:
+  ExternalTorqueQuadraticCostAD(const ExternalTorqueQuadraticCostAD& other);
 
-  std::unique_ptr<StateInputCost> getExternalTorqueQuadraticCost(size_t contactPointIndex) const;
+  ad_vector_t costVectorFunction(ad_scalar_t time,
+                                 const ad_vector_t& state,
+                                 const ad_vector_t& input,
+                                 const ad_vector_t& parameters) override;
 
- private:
-  std::string taskFile_;
-  std::string referenceFile_;
+  const size_t contactPointIndex_;
+  const pinocchio::FrameIndex frameID_;
+  const size_t n_parameters_;
+  vector_t sqrtWeights_;
+  const std::vector<std::string> activeJointNames_;
   const SwitchedModelReferenceManager* referenceManagerPtr_;
-  const PinocchioInterface* pinocchioInterfacePtr_;
-  const MpcRobotModelBase<scalar_t>* mpcRobotModelPtr_;
-  const MpcRobotModelBase<ad_scalar_t>* mpcRobotModelADPtr_;
-  const ModelSettings& modelSettings_;
-  const bool verbose_;
+  PinocchioInterfaceCppAd pinocchioInterfaceCppAd_;
+  const std::unique_ptr<MpcRobotModelBase<ad_scalar_t>> mpcRobotModelADPtr;
+  bool isActive_ = true;
 };
 
 }  // namespace ocs2::humanoid
