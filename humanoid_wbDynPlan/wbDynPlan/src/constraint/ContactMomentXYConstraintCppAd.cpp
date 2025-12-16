@@ -30,9 +30,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <pinocchio/fwd.hpp>
 
-#include "humanoid_common_mpc/constraint/ContactMomentXYConstraintCppAd.h"
+#include "wbDynPlan/constraint/ContactMomentXYConstraintCppAd.h"
 
-#include "humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h"
+#include "wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h"
 
 #include <pinocchio/multibody/data.hpp>
 #include <pinocchio/multibody/model.hpp>

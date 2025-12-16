@@ -28,8 +28,8 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include <humanoid_centroidal_mpc_ros2/gains/GainsReceiver.h>
-#include <humanoid_centroidal_mpc_ros2/gains/GainsUpdaterUtils.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GainsReceiver.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GainsUpdaterUtils.h>
 #include <iostream>
 
 namespace ocs2::humanoid {

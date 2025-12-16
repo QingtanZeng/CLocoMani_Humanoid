@@ -41,9 +41,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/misc/LoadData.h>
 #include <ocs2_pinocchio_interface/urdf.h>
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
-#include "humanoid_common_mpc/contact/ContactPolygon.h"
-#include "humanoid_common_mpc/contact/ContactRectangle.h"
+#include "wbDynPlan/common/ModelSettings.h"
+#include "wbDynPlan/contact/ContactPolygon.h"
+#include "wbDynPlan/contact/ContactRectangle.h"
 
 namespace ocs2::humanoid {
 

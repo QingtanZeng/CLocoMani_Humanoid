@@ -35,8 +35,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_core/reference/ModeSchedule.h>
 
-#include "humanoid_common_mpc/gait/Gait.h"
-#include "humanoid_common_mpc/gait/MotionPhaseDefinition.h"
+#include "wbDynPlan/gait/Gait.h"
+#include "wbDynPlan/gait/MotionPhaseDefinition.h"
 
 namespace ocs2::humanoid {
 

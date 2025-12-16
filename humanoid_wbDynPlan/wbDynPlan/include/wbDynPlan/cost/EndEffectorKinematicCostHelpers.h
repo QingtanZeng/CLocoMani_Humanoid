@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_robotic_tools/common/RotationTransforms.h>
 
-#include "humanoid_common_mpc/common/Types.h"
+#include "wbDynPlan/common/Types.h"
 
 namespace ocs2::humanoid {
 

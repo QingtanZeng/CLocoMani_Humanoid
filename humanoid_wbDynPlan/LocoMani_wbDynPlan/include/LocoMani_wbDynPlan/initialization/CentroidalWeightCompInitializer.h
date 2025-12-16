@@ -32,9 +32,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_centroidal_model/CentroidalModelInfo.h>
 #include <ocs2_core/initialization/Initializer.h>
-#include "humanoid_centroidal_mpc/common/CentroidalMpcRobotModel.h"
+#include "LocoMani_wbDynPlan/common/CentroidalMpcRobotModel.h"
 
-#include "humanoid_common_mpc/reference_manager/SwitchedModelReferenceManager.h"
+#include "wbDynPlan/reference_manager/SwitchedModelReferenceManager.h"
 
 namespace ocs2::humanoid {
 

@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
 
-#include "humanoid_centroidal_mpc/cost/CentroidalMpcEndEffectorFootCost.h"
+#include "LocoMani_wbDynPlan/cost/CentroidalMpcEndEffectorFootCost.h"
 
 #include <ocs2_centroidal_model/ModelHelperFunctions.h>
 #include <ocs2_robotic_tools/common/RotationTransforms.h>

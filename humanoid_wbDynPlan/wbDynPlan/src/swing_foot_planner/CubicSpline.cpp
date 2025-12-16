@@ -28,7 +28,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/swing_foot_planner/CubicSpline.h"
+#include "wbDynPlan/swing_foot_planner/CubicSpline.h"
 
 namespace ocs2::humanoid {
 

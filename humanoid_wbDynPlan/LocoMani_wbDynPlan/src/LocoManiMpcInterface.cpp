@@ -209,7 +209,7 @@ void LocoManiMpcInterface::setupOptimalControlProblem() {
   // 1) Hand End-effctor Kinematics Limits:
   // 2）Manipulation Friction fixed connection:
   // 3) Manipulation Collision (as soft cost in sqp)
-  problemPtr_->stateSoftConstraintPtr->add("ManiCollisionSoftConstraint", factory.getManiCollisionConstraint());
+  //problemPtr_->stateSoftConstraintPtr->add("ManiCollisionSoftConstraint", factory.getManiCollisionConstraint());
 
   for (size_t i = N_FOOTCONTACTS; i < (N_HANDCONTACTS + N_FOOTCONTACTS); ++i) {
     const std::string& handName = modelSettings_.contactNames[i];
@@ -220,7 +220,7 @@ void LocoManiMpcInterface::setupOptimalControlProblem() {
                                                                   velocityUpdateCallback, footName, modelSettings_.modelFolderCppAd,
                                                                   modelSettings_.recompileLibrariesCppAd, modelSettings_.verboseCppAd));
     // Manipulation Friction fixed connection (! 修改.get()函数适合手部任务)
-    problemPtr_->inequalityConstraintPtr->add(handName + "_frictionCone", factory.getFrictionForceConeConstraint(i));
+    // problemPtr_->inequalityConstraintPtr->add(handName + "_frictionCone", factory.getFrictionForceConeConstraint(i));
 
     // 1) Hand End-effctor Kinematics Limits
     // relative location to floating base: [x, y, z]

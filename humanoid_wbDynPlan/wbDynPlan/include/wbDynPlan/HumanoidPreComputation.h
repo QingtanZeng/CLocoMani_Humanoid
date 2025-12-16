@@ -36,12 +36,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/PreComputation.h>
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
 
-#include "humanoid_common_mpc/constraint/EndEffectorKinematicsLinearVelConstraint.h"
+#include "wbDynPlan/constraint/EndEffectorKinematicsLinearVelConstraint.h"
 
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
-#include "humanoid_common_mpc/swing_foot_planner/SwingTrajectoryPlanner.h"
+#include "wbDynPlan/common/ModelSettings.h"
+#include "wbDynPlan/swing_foot_planner/SwingTrajectoryPlanner.h"
 
 namespace ocs2::humanoid {
 

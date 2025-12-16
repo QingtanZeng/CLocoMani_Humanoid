@@ -28,17 +28,17 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include <humanoid_centroidal_mpc_ros2/gains/GainsUpdaterUtils.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GainsUpdaterUtils.h>
 #include <iostream>
 
-#include <humanoid_centroidal_mpc_ros2/gains/EndEffectorFootGainsUpdater.h>
-#include <humanoid_centroidal_mpc_ros2/gains/EndEffectorKinematicsGainsUpdater.h>
-#include <humanoid_centroidal_mpc_ros2/gains/FootCollisionGainsUpdater.h>
-#include <humanoid_centroidal_mpc_ros2/gains/JointLimitsGainsUpdater.h>
-#include <humanoid_centroidal_mpc_ros2/gains/QuadraticStateCostWeightsUpdater.h>
-#include <humanoid_centroidal_mpc_ros2/gains/QuadraticStateInputGainsUpdater.h>
-#include <humanoid_centroidal_mpc_ros2/gains/StateInputConstraintGainsUpdater.h>
-#include <humanoid_centroidal_mpc_ros2/gains/StateInputSoftConstraintGainsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/EndEffectorFootGainsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/EndEffectorKinematicsGainsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/FootCollisionGainsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/JointLimitsGainsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/QuadraticStateCostWeightsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/QuadraticStateInputGainsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/StateInputConstraintGainsUpdater.h>
+#include <LocoMani_wbDynPlan_ros2/gains/StateInputSoftConstraintGainsUpdater.h>
 
 namespace ocs2::humanoid::utils {
 

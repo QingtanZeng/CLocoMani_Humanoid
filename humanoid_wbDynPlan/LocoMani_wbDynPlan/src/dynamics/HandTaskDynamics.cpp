@@ -1,0 +1,1 @@
+#include "LocoMani_wbDynPlan/dynamics/HandTaskDynamics.h"

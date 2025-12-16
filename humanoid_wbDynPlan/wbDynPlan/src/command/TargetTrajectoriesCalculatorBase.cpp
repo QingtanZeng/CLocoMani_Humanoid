@@ -28,14 +28,14 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/command/TargetTrajectoriesCalculatorBase.h"
+#include "wbDynPlan/command/TargetTrajectoriesCalculatorBase.h"
 
 #include <algorithm>  // For std::clamp
 
 #include <ocs2_core/misc/LoadData.h>
 
 #include <cmath>
-#include "humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h"
+#include "wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h"
 
 namespace ocs2::humanoid {
 

@@ -33,9 +33,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_ros2_interfaces/mrt/MRT_ROS_Dummy_Loop.h>
 #include <ocs2_ros2_interfaces/mrt/MRT_ROS_Interface.h>
 
-#include <humanoid_centroidal_mpc/CentroidalMpcInterface.h>
+#include <LocoMani_wbDynPlan/CentroidalMpcInterface.h>
 
-#include "humanoid_common_mpc_ros2/visualization/HumanoidVisualizer.h"
+#include "wbDynPlan_ros2/visualization/HumanoidVisualizer.h"
 
 using namespace ocs2;
 using namespace ocs2::humanoid;

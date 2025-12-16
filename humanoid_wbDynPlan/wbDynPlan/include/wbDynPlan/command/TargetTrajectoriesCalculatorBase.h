@@ -35,9 +35,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/reference/TargetTrajectories.h>
 #include <ocs2_mpc/SystemObservation.h>
 
-#include <humanoid_common_mpc/common/ModelSettings.h>
-#include <humanoid_common_mpc/common/Types.h>
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
+#include <wbDynPlan/common/ModelSettings.h>
+#include <wbDynPlan/common/Types.h>
+#include "wbDynPlan/common/MpcRobotModelBase.h"
 
 namespace ocs2::humanoid {
 

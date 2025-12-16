@@ -31,10 +31,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #pragma once
 
 #include <ocs2_core/constraint/StateInputConstraint.h>
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
 
-#include "humanoid_common_mpc/common/Types.h"
-#include "humanoid_common_mpc/reference_manager/SwitchedModelReferenceManager.h"
+#include "wbDynPlan/common/Types.h"
+#include "wbDynPlan/reference_manager/SwitchedModelReferenceManager.h"
 
 namespace ocs2::humanoid {
 

@@ -28,9 +28,9 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/initialization/WeightCompInitializer.h"
+#include "wbDynPlan/initialization/WeightCompInitializer.h"
 
-#include "humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h"
+#include "wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h"
 
 namespace ocs2::humanoid {
 

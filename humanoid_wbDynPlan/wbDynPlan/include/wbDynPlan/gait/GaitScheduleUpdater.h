@@ -37,9 +37,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/Types.h>
 #include <ocs2_oc/synchronized_module/SolverSynchronizedModule.h>
 
-#include <humanoid_common_mpc/gait/GaitSchedule.h>
-#include <humanoid_common_mpc/gait/ModeSequenceTemplate.h>
-#include <humanoid_common_mpc/gait/MotionPhaseDefinition.h>
+#include <wbDynPlan/gait/GaitSchedule.h>
+#include <wbDynPlan/gait/ModeSequenceTemplate.h>
+#include <wbDynPlan/gait/MotionPhaseDefinition.h>
 
 namespace ocs2::humanoid {
 

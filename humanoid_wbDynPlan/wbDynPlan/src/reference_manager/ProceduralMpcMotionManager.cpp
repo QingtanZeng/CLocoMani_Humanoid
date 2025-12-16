@@ -28,13 +28,13 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/reference_manager/ProceduralMpcMotionManager.h"
+#include "wbDynPlan/reference_manager/ProceduralMpcMotionManager.h"
 
 #include <ocs2_core/misc/LoadData.h>
 
 #include <cmath>
-#include "humanoid_common_mpc/gait/GaitScheduleUpdater.h"
-#include "humanoid_common_mpc/gait/ModeSequenceTemplate.h"
+#include "wbDynPlan/gait/GaitScheduleUpdater.h"
+#include "wbDynPlan/gait/ModeSequenceTemplate.h"
 
 namespace ocs2::humanoid {
 

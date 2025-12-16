@@ -28,9 +28,9 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/constraint/JointLimitsSoftConstraint.h"
+#include "wbDynPlan/constraint/JointLimitsSoftConstraint.h"
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
+#include "wbDynPlan/common/ModelSettings.h"
 
 #include <iostream>
 

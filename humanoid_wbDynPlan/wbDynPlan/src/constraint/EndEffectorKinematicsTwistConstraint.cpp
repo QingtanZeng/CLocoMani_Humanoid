@@ -28,8 +28,8 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/constraint/EndEffectorKinematicsTwistConstraint.h"
-#include "humanoid_common_mpc/common/Types.h"
+#include "wbDynPlan/constraint/EndEffectorKinematicsTwistConstraint.h"
+#include "wbDynPlan/common/Types.h"
 
 namespace ocs2::humanoid {
 

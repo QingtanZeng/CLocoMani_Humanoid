@@ -33,11 +33,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/constraint/StateInputConstraintCppAd.h>
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
-#include "humanoid_common_mpc/common/Types.h"
-#include "humanoid_common_mpc/contact/ContactRectangle.h"
-#include "humanoid_common_mpc/reference_manager/SwitchedModelReferenceManager.h"
+#include "wbDynPlan/common/ModelSettings.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
+#include "wbDynPlan/common/Types.h"
+#include "wbDynPlan/contact/ContactRectangle.h"
+#include "wbDynPlan/reference_manager/SwitchedModelReferenceManager.h"
 
 namespace ocs2::humanoid {
 

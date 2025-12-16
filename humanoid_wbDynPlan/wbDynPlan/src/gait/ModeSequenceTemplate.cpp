@@ -28,7 +28,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/gait/ModeSequenceTemplate.h"
+#include "wbDynPlan/gait/ModeSequenceTemplate.h"
 
 #include <ocs2_core/misc/Display.h>
 #include <ocs2_core/misc/LoadData.h>

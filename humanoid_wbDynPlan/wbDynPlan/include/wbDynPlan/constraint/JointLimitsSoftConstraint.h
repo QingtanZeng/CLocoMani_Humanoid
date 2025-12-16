@@ -35,8 +35,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/cost/StateCost.h>
 #include <ocs2_core/penalties/penalties/PieceWisePolynomialBarrierPenalty.h>
 
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
-#include "humanoid_common_mpc/common/Types.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
+#include "wbDynPlan/common/Types.h"
 
 namespace ocs2::humanoid {
 

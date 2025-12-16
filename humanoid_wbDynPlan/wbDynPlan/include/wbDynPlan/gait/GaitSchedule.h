@@ -34,8 +34,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_core/reference/ModeSchedule.h>
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
-#include "humanoid_common_mpc/gait/ModeSequenceTemplate.h"
+#include "wbDynPlan/common/ModelSettings.h"
+#include "wbDynPlan/gait/ModeSequenceTemplate.h"
 
 namespace ocs2::humanoid {
 

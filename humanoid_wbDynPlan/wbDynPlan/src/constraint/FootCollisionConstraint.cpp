@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <pinocchio/fwd.hpp>
 
-#include "humanoid_common_mpc/constraint/FootCollisionConstraint.h"
+#include "wbDynPlan/constraint/FootCollisionConstraint.h"
 
 #include <pinocchio/algorithm/frames.hpp>
 #include <pinocchio/algorithm/kinematics.hpp>

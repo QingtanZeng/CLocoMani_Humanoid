@@ -30,8 +30,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
-#include <humanoid_centroidal_mpc_ros2/gains/GainsUpdaterInterface.h>
-#include <humanoid_common_mpc/constraint/JointLimitsSoftConstraint.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GainsUpdaterInterface.h>
+#include <wbDynPlan/constraint/JointLimitsSoftConstraint.h>
 
 namespace ocs2::humanoid {
 

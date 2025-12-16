@@ -28,7 +28,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/constraint/FrictionForceConeConstraint.h"
+#include "wbDynPlan/constraint/FrictionForceConeConstraint.h"
 
 namespace ocs2::humanoid {
 

@@ -34,10 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_oc/synchronized_module/ReferenceManager.h>
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
 
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
-#include "humanoid_common_mpc/gait/GaitSchedule.h"
-#include "humanoid_common_mpc/gait/MotionPhaseDefinition.h"
-#include "humanoid_common_mpc/swing_foot_planner/SwingTrajectoryPlanner.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
+#include "wbDynPlan/gait/GaitSchedule.h"
+#include "wbDynPlan/gait/MotionPhaseDefinition.h"
+#include "wbDynPlan/swing_foot_planner/SwingTrajectoryPlanner.h"
 
 namespace ocs2::humanoid {
 

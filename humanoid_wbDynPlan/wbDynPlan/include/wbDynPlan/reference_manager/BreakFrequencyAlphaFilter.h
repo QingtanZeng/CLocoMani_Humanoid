@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
-#include <humanoid_common_mpc/common/Types.h>
+#include <wbDynPlan/common/Types.h>
 #include <cmath>
 
 namespace ocs2::humanoid {

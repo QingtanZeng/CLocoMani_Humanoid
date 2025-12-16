@@ -35,11 +35,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/misc/LoadData.h>
 #include <ocs2_ros2_interfaces/command/TargetTrajectoriesKeyboardPublisher.h>
 
-#include <humanoid_centroidal_mpc/command/CentroidalMpcTargetTrajectoriesCalculator.h>
-#include <humanoid_common_mpc/common/ModelSettings.h>
-#include <humanoid_common_mpc/common/Types.h>
+#include <LocoMani_wbDynPlan/command/CentroidalMpcTargetTrajectoriesCalculator.h>
+#include <wbDynPlan/common/ModelSettings.h>
+#include <wbDynPlan/common/Types.h>
 
-#include <humanoid_centroidal_mpc/CentroidalMpcInterface.h>
+#include <LocoMani_wbDynPlan/CentroidalMpcInterface.h>
 
 using namespace ocs2;
 using namespace ocs2::humanoid;

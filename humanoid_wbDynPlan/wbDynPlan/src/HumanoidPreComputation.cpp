@@ -36,7 +36,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_core/misc/Numerics.h>
 
-#include <humanoid_common_mpc/HumanoidPreComputation.h>
+#include <wbDynPlan/HumanoidPreComputation.h>
 
 namespace ocs2::humanoid {
 

@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #pragma once
 
 #include <humanoid_mpc_msgs/msg/walking_velocity_command.hpp>
-#include "humanoid_common_mpc/common/Types.h"
+#include "wbDynPlan/common/Types.h"
 
 namespace ocs2::humanoid {
 

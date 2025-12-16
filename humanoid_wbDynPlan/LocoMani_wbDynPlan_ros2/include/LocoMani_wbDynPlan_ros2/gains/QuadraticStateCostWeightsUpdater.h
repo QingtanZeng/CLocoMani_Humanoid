@@ -30,8 +30,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
-#include <humanoid_centroidal_mpc_ros2/gains/GainsUpdaterInterface.h>
-#include <humanoid_centroidal_mpc_ros2/gains/GainsUpdaterUtils.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GainsUpdaterInterface.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GainsUpdaterUtils.h>
 #include <ocs2_core/cost/QuadraticStateCost.h>
 
 namespace ocs2::humanoid {

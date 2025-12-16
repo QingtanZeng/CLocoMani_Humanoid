@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
-#include <humanoid_centroidal_mpc_ros2/gains/GenericGuiInterface.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GenericGuiInterface.h>
 #include <ocs2_oc/oc_problem/OptimalControlProblem.h>
 #include <ocs2_ros2_msgs/msg/gains.hpp>
 #include <optional>

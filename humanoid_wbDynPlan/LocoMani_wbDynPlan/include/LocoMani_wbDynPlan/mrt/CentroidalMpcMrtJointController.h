@@ -29,11 +29,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_mpc/MPC_MRT_Interface.h>
 
-#include "humanoid_centroidal_mpc/CentroidalMpcInterface.h"
+#include "LocoMani_wbDynPlan/CentroidalMpcInterface.h"
 
 #include <ocs2_ros2_interfaces/mrt/DummyObserver.h>
 #include <robot_model/ControllerBase.h>
-#include "humanoid_common_mpc/reference_manager/ProceduralMpcMotionManager.h"
+#include "wbDynPlan/reference_manager/ProceduralMpcMotionManager.h"
 #include "robot_model/RobotDescription.h"
 
 namespace ocs2::humanoid {

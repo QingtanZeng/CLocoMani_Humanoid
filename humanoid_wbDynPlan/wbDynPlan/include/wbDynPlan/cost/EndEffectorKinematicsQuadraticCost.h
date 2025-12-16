@@ -35,10 +35,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_robotic_tools/end_effector/EndEffectorKinematics.h>
 #include <pinocchio/algorithm/frames.hpp>
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
+#include "wbDynPlan/common/ModelSettings.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
 
-#include "humanoid_common_mpc/cost/EndEffectorKinematicCostHelpers.h"
+#include "wbDynPlan/cost/EndEffectorKinematicCostHelpers.h"
 
 namespace ocs2::humanoid {
 

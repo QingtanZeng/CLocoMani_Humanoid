@@ -28,9 +28,9 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_centroidal_mpc/initialization/CentroidalWeightCompInitializer.h"
+#include "LocoMani_wbDynPlan/initialization/CentroidalWeightCompInitializer.h"
 
-#include "humanoid_centroidal_mpc/dynamics/DynamicsHelperFunctions.h"
+#include "LocoMani_wbDynPlan/dynamics/DynamicsHelperFunctions.h"
 
 #include <ocs2_centroidal_model/AccessHelperFunctions.h>
 

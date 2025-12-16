@@ -28,7 +28,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_common_mpc/HumanoidCostConstraintFactory.h"
+#include "wbDynPlan/HumanoidCostConstraintFactory.h"
 
 #include <ocs2_core/misc/LoadData.h>
 #include <ocs2_core/penalties/Penalties.h>
@@ -41,15 +41,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/soft_constraint/StateInputSoftConstraint.h>
 #include <ocs2_core/soft_constraint/StateSoftConstraint.h>
 
-#include <humanoid_common_mpc/constraint/FrictionForceConeConstraint.h>
-#include <humanoid_common_mpc/constraint/ZeroWrenchConstraint.h>
-#include <humanoid_common_mpc/contact/ContactRectangle.h>
-#include <humanoid_common_mpc/cost/StateInputQuadraticCost.h>
-#include <humanoid_common_mpc/pinocchio_model/pinocchioUtils.h>
-#include "humanoid_common_mpc/constraint/ContactMomentXYConstraintCppAd.h"
-#include "humanoid_common_mpc/constraint/FootCollisionConstraint.h"
-#include "humanoid_common_mpc/constraint/JointLimitsSoftConstraint.h"
-#include "humanoid_common_mpc/cost/ExternalTorqueQuadraticCostAD.h"
+#include <wbDynPlan/constraint/FrictionForceConeConstraint.h>
+#include <wbDynPlan/constraint/ZeroWrenchConstraint.h>
+#include <wbDynPlan/contact/ContactRectangle.h>
+#include <wbDynPlan/cost/StateInputQuadraticCost.h>
+#include <wbDynPlan/pinocchio_model/pinocchioUtils.h>
+#include "wbDynPlan/constraint/ContactMomentXYConstraintCppAd.h"
+#include "wbDynPlan/constraint/FootCollisionConstraint.h"
+#include "wbDynPlan/constraint/JointLimitsSoftConstraint.h"
+#include "wbDynPlan/cost/ExternalTorqueQuadraticCostAD.h"
 
 namespace ocs2::humanoid {
 

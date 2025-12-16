@@ -31,13 +31,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_sqp/SqpMpc.h>
 #include <rclcpp/rclcpp.hpp>
 
-#include <humanoid_centroidal_mpc/CentroidalMpcInterface.h>
+#include <LocoMani_wbDynPlan/CentroidalMpcInterface.h>
 #include <mujoco_sim_interface/MujocoSimInterface.h>
 
-#include <humanoid_centroidal_mpc/command/CentroidalMpcTargetTrajectoriesCalculator.h>
-#include <humanoid_centroidal_mpc/mrt/CentroidalMpcMrtJointController.h>
-#include "humanoid_common_mpc_ros2/ros_comm/Ros2ProceduralMpcMotionManager.h"
-#include "humanoid_common_mpc_ros2/visualization/HumanoidVisualizer.h"
+#include <LocoMani_wbDynPlan/command/CentroidalMpcTargetTrajectoriesCalculator.h>
+#include <LocoMani_wbDynPlan/mrt/CentroidalMpcMrtJointController.h>
+#include "wbDynPlan_ros2/ros_comm/Ros2ProceduralMpcMotionManager.h"
+#include "wbDynPlan_ros2/visualization/HumanoidVisualizer.h"
 
 using namespace ocs2;
 using namespace ocs2::humanoid;

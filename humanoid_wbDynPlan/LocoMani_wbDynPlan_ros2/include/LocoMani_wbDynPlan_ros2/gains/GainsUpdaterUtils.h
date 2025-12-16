@@ -30,9 +30,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma once
 
-#include <humanoid_centroidal_mpc/CentroidalMpcInterface.h>
-#include <humanoid_centroidal_mpc_ros2/gains/GainsUpdaterInterface.h>
-#include <humanoid_common_mpc/common/ModelSettings.h>
+#include <LocoMani_wbDynPlan/CentroidalMpcInterface.h>
+#include <LocoMani_wbDynPlan_ros2/gains/GainsUpdaterInterface.h>
+#include <wbDynPlan/common/ModelSettings.h>
 #include <memory>
 #include <string>
 #include <unordered_map>

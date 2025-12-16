@@ -27,7 +27,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-#include "humanoid_centroidal_mpc/mrt/CentroidalMpcMrtJointController.h"
+#include "LocoMani_wbDynPlan/mrt/CentroidalMpcMrtJointController.h"
 
 #include <ocs2_robotic_tools/common/RotationDerivativesTransforms.h>
 #include <ocs2_robotic_tools/common/RotationTransforms.h>
@@ -35,10 +35,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "ocs2_centroidal_model/AccessHelperFunctions.h"
 
-#include <humanoid_common_mpc/gait/MotionPhaseDefinition.h>
-#include <humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h>
-#include <humanoid_common_mpc/reference_manager/ProceduralMpcMotionManager.h>
-#include "humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h"
+#include <wbDynPlan/gait/MotionPhaseDefinition.h>
+#include <wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h>
+#include <wbDynPlan/reference_manager/ProceduralMpcMotionManager.h>
+#include "wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h"
 
 namespace ocs2::humanoid {
 

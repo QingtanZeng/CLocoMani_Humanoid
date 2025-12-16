@@ -1,4 +1,4 @@
-#include "humanoid_centroidal_mpc/dynamics/CentroidalDynamicsAD.h"
+#include "LocoMani_wbDynPlan/dynamics/CentroidalDynamicsAD.h"
 
 namespace ocs2::humanoid {
 

@@ -43,10 +43,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_pinocchio_interface/PinocchioInterface.h>
 #include <ocs2_robotic_tools/common/RotationTransforms.h>
 
-#include "humanoid_common_mpc/common/ModelSettings.h"
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
-#include "humanoid_common_mpc/common/Types.h"
-#include "humanoid_common_mpc/pinocchio_model/DynamicsHelperFunctions.h"
+#include "wbDynPlan/common/ModelSettings.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
+#include "wbDynPlan/common/Types.h"
+#include "wbDynPlan/pinocchio_model/DynamicsHelperFunctions.h"
 
 namespace ocs2::humanoid {
 

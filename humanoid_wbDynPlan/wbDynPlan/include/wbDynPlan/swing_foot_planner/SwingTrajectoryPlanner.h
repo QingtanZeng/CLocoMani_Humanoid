@@ -32,8 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ocs2_core/reference/ModeSchedule.h>
 
-#include "humanoid_common_mpc/common/Types.h"
-#include "humanoid_common_mpc/swing_foot_planner/SplineCpg.h"
+#include "wbDynPlan/common/Types.h"
+#include "wbDynPlan/swing_foot_planner/SplineCpg.h"
 
 namespace ocs2::humanoid {
 

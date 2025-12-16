@@ -37,14 +37,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/reference/TargetTrajectories.h>
 #include <ocs2_mpc/SystemObservation.h>
 
-#include <humanoid_common_mpc/command/WalkingVelocityCommand.h>
-#include <humanoid_common_mpc/gait/GaitSchedule.h>
-#include <humanoid_common_mpc/gait/ModeSequenceTemplate.h>
+#include <wbDynPlan/command/WalkingVelocityCommand.h>
+#include <wbDynPlan/gait/GaitSchedule.h>
+#include <wbDynPlan/gait/ModeSequenceTemplate.h>
 
 #include <ocs2_oc/synchronized_module/SolverSynchronizedModule.h>
-#include "humanoid_common_mpc/common/MpcRobotModelBase.h"
-#include "humanoid_common_mpc/reference_manager/BreakFrequencyAlphaFilter.h"
-#include "humanoid_common_mpc/reference_manager/SwitchedModelReferenceManager.h"
+#include "wbDynPlan/common/MpcRobotModelBase.h"
+#include "wbDynPlan/reference_manager/BreakFrequencyAlphaFilter.h"
+#include "wbDynPlan/reference_manager/SwitchedModelReferenceManager.h"
 
 namespace ocs2::humanoid {
 

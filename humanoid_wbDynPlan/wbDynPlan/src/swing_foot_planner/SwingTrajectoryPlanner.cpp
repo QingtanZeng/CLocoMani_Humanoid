@@ -31,11 +31,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <boost/property_tree/info_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
 
-#include "humanoid_common_mpc/swing_foot_planner/SwingTrajectoryPlanner.h"
+#include "wbDynPlan/swing_foot_planner/SwingTrajectoryPlanner.h"
 
 #include <ocs2_core/misc/Lookup.h>
 
-#include "humanoid_common_mpc/gait/MotionPhaseDefinition.h"
+#include "wbDynPlan/gait/MotionPhaseDefinition.h"
 
 namespace ocs2::humanoid {
 
