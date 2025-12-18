@@ -29,22 +29,19 @@ model_settings
   recompileLibrariesCppAd       false
   modelFolderCppAd              build/centroidal_mpc_cppad_autocode_gen
 
-  ; Exclude these joints from MPC model
-  fixedJointNames
-  {
-    [0] "left_wrist_roll_joint"
-    [1] "left_wrist_pitch_joint"
-    [2] "left_wrist_yaw_joint"
-    [3] "right_wrist_roll_joint"
-    [4] "right_wrist_pitch_joint"
-    [5] "right_wrist_yaw_joint"
-  }
-  
   ; Pinocchio Frame names for the contact frames
   contactNames6DoF
   {
     [0] "foot_l_contact"
     [1] "foot_r_contact"
+    [2] "hand_l_contact"
+    [3] "hand_r_contact"
+  }
+
+  contactNames3DoF
+  {
+    [0] "hand_l_contact"
+    [1] "hand_r_contact"
   }
 
   ; The Parent frames on which the contact frames are added. 
@@ -52,6 +49,8 @@ model_settings
   {
     [0] "left_ankle_roll_joint"
     [1] "right_ankle_roll_joint"
+    [2] "left_wrist_yaw_joint"
+    [3] "right_wrist_yaw_joint"
   }
 
   ;; Used for arm swing reference
@@ -157,10 +156,16 @@ initialState
   (28,0)  0.0       ; left_shoulder_roll_joint
   (29,0)  0.0       ; left_shoulder_yaw_joint
   (30,0)  0.0       ; left_elbow_joint
-  (31,0)  0.0       ; right_shoulder_pitch_joint
-  (32,0)  0.0       ; right_shoulder_roll_joint
-  (33,0)  0.0       ; right_shoulder_yaw_joint
-  (34,0)  0.0       ; right_elbow_joint
+  (31,0)  0.0       ; left_wrist_roll_joint
+  (32,0)  0.0       ; left_wrist_pitch_joint
+  (33,0)  0.0       ; left_wrist_yaw_joint
+  (34,0)  0.0       ; right_shoulder_pitch_joint
+  (35,0)  0.0       ; right_shoulder_roll_joint
+  (36,0)  0.0       ; right_shoulder_yaw_joint
+  (37,0)  0.0       ; right_elbow_joint
+  (38,0)  0.0       ; right_wrist_roll_joint
+  (39,0)  0.0       ; right_wrist_pitch_joint
+  (40,0)  0.0       ; right_wrist_yaw_joint
 }
 
 ; standard state weight matrix
@@ -205,10 +210,16 @@ Q
   (28,28) 20.0     ;    left_shoulder_roll_joint
   (29,29) 2.0      ;    left_shoulder_yaw_joint
   (30,30) 2.0      ;    left_elbow_joint
-  (31,31) 10.0      ;    right_shoulder_pitch_joint
-  (32,32) 20.0     ;    right_shoulder_roll_joint
-  (33,33) 2.0      ;    right_shoulder_yaw_joint
-  (34,34) 2.0      ;    right_elbow_joint
+  (31,31) 2.0      ;    left_wrist_roll_joint
+  (32,32) 2.0      ;    left_wrist_pitch_joint
+  (33,33) 2.0      ;    left_wrist_yaw_joint
+  (34,34) 10.0     ;    right_shoulder_pitch_joint
+  (35,35) 20.0     ;    right_shoulder_roll_joint
+  (36,36) 2.0      ;    right_shoulder_yaw_joint
+  (37,37) 2.0      ;    right_elbow_joint
+  (38,38) 2.0      ;    right_wrist_roll_joint
+  (39,39) 2.0      ;    right_wrist_pitch_joint
+  (40,40) 2.0      ;    right_wrist_yaw_joint
 
 }
 
@@ -231,30 +242,38 @@ R
   (10,10) 0.05       ; right_moment_y
   (11,11) 0.2        ; right_moment_z
 
+  ;; Hand Contact Forces ;;
+  (12,12) 0.05       ; f_hand_l_x
+  (13,13) 0.05       ; f_hand_l_y
+  (14,14) 0.05       ; f_hand_l_z
+  (15,15) 0.05       ; f_hand_r_x
+  (16,16) 0.05       ; f_hand_r_y
+  (17,17) 0.05       ; f_hand_r_z
+
   ;; Joint Velocities ;;
-  (12,12) 20.0       ;    left_hip_pitch_joint
-  (13,13) 20.0      ;    left_hip_roll_joint
-  (14,14) 200.0      ;    left_hip_yaw_joint
-  (15,15) 20.0       ;    left_knee_joint
-  (16,16) 20.0       ;    left_ankle_pitch_joint
-  (17,17) 20.0       ;    left_ankle_roll_joint
-  (18,18) 20.0       ;    right_hip_pitch_joint
-  (19,19) 20.0      ;    right_hip_roll_joint
-  (20,20) 200.0      ;    right_hip_yaw_joint
-  (21,21) 20.0       ;    right_knee_joint
-  (22,22) 20.0       ;    right_ankle_pitch_joint
-  (23,23) 20.0       ;    right_ankle_roll_joint
-  (24,24) 2000.0      ;    waist_yaw_joint
-  (25,25) 800.0      ;    waist_roll_joint
-  (26,26) 2000.0      ;    waist_pitch_joint
-  (27,27) 200.0      ;    left_shoulder_pitch_joint
-  (28,28) 100.0      ;    left_shoulder_roll_joint
-  (29,29) 100.0      ;    left_shoulder_yaw_joint
-  (30,30) 200.0      ;    left_elbow_joint
-  (31,31) 200.0      ;    right_shoulder_pitch_joint
-  (32,32) 100.0      ;    right_shoulder_roll_joint
-  (33,33) 100.0      ;    right_shoulder_yaw_joint
-  (34,34) 200.0      ;    right_elbow_joint
+  (18,18) 20.0       ;    left_hip_pitch_joint
+  (19,19) 20.0      ;    left_hip_roll_joint
+  (20,20) 200.0      ;    left_hip_yaw_joint
+  (21,21) 20.0       ;    left_knee_joint
+  (22,22) 20.0       ;    left_ankle_pitch_joint
+  (23,23) 20.0       ;    left_ankle_roll_joint
+  (24,24) 20.0       ;    right_hip_pitch_joint
+  (25,25) 20.0      ;    right_hip_roll_joint
+  (26,26) 200.0      ;    right_hip_yaw_joint
+  (27,27) 20.0       ;    right_knee_joint
+  (28,28) 20.0       ;    right_ankle_pitch_joint
+  (29,29) 20.0       ;    right_ankle_roll_joint
+  (30,30) 2000.0      ;    waist_yaw_joint
+  (31,31) 800.0      ;    waist_roll_joint
+  (32,32) 2000.0      ;    waist_pitch_joint
+  (33,33) 200.0      ;    left_shoulder_pitch_joint
+  (34,34) 100.0      ;    left_shoulder_roll_joint
+  (35,35) 100.0      ;    left_shoulder_yaw_joint
+  (36,36) 200.0      ;    left_elbow_joint
+  (37,37) 200.0      ;    right_shoulder_pitch_joint
+  (38,38) 100.0      ;    right_shoulder_roll_joint
+  (39,39) 100.0      ;    right_shoulder_yaw_joint
+  (40,40) 200.0      ;    right_elbow_joint
 }
 
 terminalCostScaling       3.0
@@ -299,10 +318,16 @@ Q_final
   (28,28) 20.0     ;    left_shoulder_roll_joint
   (29,29) 2.0      ;    left_shoulder_yaw_joint
   (30,30) 2.0      ;    left_elbow_joint
-  (31,31) 10.0      ;    right_shoulder_pitch_joint
-  (32,32) 20.0     ;    right_shoulder_roll_joint
-  (33,33) 2.0      ;    right_shoulder_yaw_joint
-  (34,34) 2.0      ;    right_elbow_joint
+  (31,31) 2.0      ;    left_wrist_roll_joint
+  (32,32) 2.0      ;    left_wrist_pitch_joint
+  (33,33) 2.0      ;    left_wrist_yaw_joint
+  (34,34) 10.0     ;    right_shoulder_pitch_joint
+  (35,35) 20.0     ;    right_shoulder_roll_joint
+  (36,36) 2.0      ;    right_shoulder_yaw_joint
+  (37,37) 2.0      ;    right_elbow_joint
+  (38,38) 2.0      ;    right_wrist_roll_joint
+  (39,39) 2.0      ;    right_wrist_pitch_joint
+  (40,40) 2.0      ;    right_wrist_yaw_joint
 }
 
 icp_cost_weights

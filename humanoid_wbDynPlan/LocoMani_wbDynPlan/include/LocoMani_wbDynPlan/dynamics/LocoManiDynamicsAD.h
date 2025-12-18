@@ -29,5 +29,6 @@ class LocoManiDynamicsAD : public SystemDynamicsBase {
   LocoManiDynamicsAD(const CentroidalDynamicsAD& rhs) = default;
 
   PinocchioCentroidalDynamicsAD pinocchioCentroidalDynamicsAD_;
-
+  
+};
 }   // namespace ocs2::humanoid

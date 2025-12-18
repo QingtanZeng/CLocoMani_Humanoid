@@ -27,6 +27,11 @@ class HandTaskDynamics : public SystemDynamicsBase {
 
  private:
   HandTaskDynamics(const CentroidalDynamicsAD& rhs) = default;
+
+  double massbox;
+  double mu; // Coefficient of static friction
+  double[3] dimbox; // Dimensions of the box (x,y,z), [13, 23, 16]
+
 };
 
 }   // namespace ocs2::humanoid
