@@ -1,57 +1,43 @@
-> :information_source: The repository CTrjGen is being developed in parallel with the author's R&D progress,
-> to implement more new design features from academic papers from 2023-2026 and practical functions
-> including AutoDiff, SCS solver and so on.
+> :information_source: The repository CLocoMani_Humanoid is being developed in parallel with the author's R&D progress.
 
-# Computational Trajectory Generation
-*Sequential Convex Programming for trajectory generation with hand-parser.*
+# Computational Loco-Manipulation of Humanoid Robots
+* Integrated whole-body kinematics and operation dynamics based on Sequential Convex Programming.*
 
 <p align="center">
-<img alt="CTrjGen FlowChart"
-    title="CTrjGen FlowChart"
-    src="media/CTrjGen01.png"
+<img alt="CLocoMani_Humanoid"
+    title="CLocoMani_Humanoid"
+    src="media/CLocoMani_Humanoid.png"
     width="800px" />
 </p>
 
 <p align="center">
-    <a href="http://www.gnu.org/licenses/gpl-3.0.txt"><img src="https://img.shields.io/badge/license-GPL_3-green.svg" alt="License GPL 3" /></a>
+    <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg" alt="License BSD 3-Clause" /></a>
 </p>
 
-The <b>Computational Trajectory Generation</b> (CTrjGen) is a Julia implementation of the SCP PTR algorithm [1] 
-for trajectory generation with a <b>hand-parsed process</b> and ECOS (a linear SOCP solver) [4], solely for academic purposes. 
-
-<b>Sequential Convex Programming</b> (SCP) is a type of multiple-shooting direct method for numerical optimal control problems, 
-modeled from autonomous systems such as Autonomous Driving, Robotic Loco-manipulation, Rocket Landing and so on. The <b>Penalized 
-Trust Region</b> (PTR) is one of SCP algorithm designed by Dr. T. P. Reynolds, Prof. B. Açıkmeşe et al. from ACL, University of Washington [1].
+The <b>Computational Loco-Manipulation of Humanoid Robots</b> (CLocoMani_Humanoid) is a C++ implementation of trajectory generation 
+of <b>integrated whole-body kinematics and operation dynamics</b> [1], by real-time SCP in MCP loop with first-order Quadratic SOCP solver, 
+solely for academic purposes. Its architecture mainly refers to wb_humanoid_mpc [2] and OCS2 [4].
 
 ---
 
 ## Overview
-CTrjGen is mainly composed of three parts.
-1. OCP Class: dynamics, constraints, cost and ocp parameters.
-2. SCP Class and parser function.
-3. SubProblem class and lsocp structure used in ECOS.
+CLocoMani_Humanoid implements the following designs and algorithms:
+1. Integrated Dynamics including centroidal dynamics, whole-body kinematics, task manipulation dynamics.
+2. Real-time trajectory generation based on SCP.
 
 ## Implementation Highlights
-1. <b>Hand-Parsed process</b>
-- Rather than using automatic parsers such as JuMP or CVXPY [2], the standard form of linear SOCP is hand-parsed from the original OCP.
-Because developers must be <b>familiar with each calculation step, eliminate computational bottlenecks and test software performance</b>,
-- especially for real-time embedded systems, which usually
-have limited computing resources, static memory allocation，require functional safety review and failure may cause losses in the real world.
-<p align="center">
-<img alt="Sparse structure of A,b,c Array from linear SOCP"
-    title="Sparse structure of A,b,c Array from linear SOCP"
-    src="src/trajgen/examples/trjdb_pgm_init.png"
-    width="400px" />
-</p>
-2. <b>Inverse-free FOH discretization</b> using RK4 of nonlinear system [3].
+1. Analytical derivatives for hand-parser of centroidal dynamics and whole-body kinematics.
+2. SCP in MPC: real-time handle with nonlinear OCP completely with hard constraints including {Affine Equality, Non-Negative, SOC}, rather than soft cost.
+3. Dynamics: FOH discretization to less nodes and smooth control, better than ZOH.
 
 ---
 
 ## Reference
-[1] Reynolds, T. P. (2020). Computational guidance and control for aerospace systems. University of Washington. \
-[2] https://github.com/UW-ACL/SCPToolbox.jl \
-[3] Kamath, A. G., Doll, J. A., Elango, P., Kim, T., Mceowen, S., Yu, Y., ... & Açıkmeşe, B. (2025). Onboard Dual Quaternion Guidance for Rocket Landing. arXiv preprint arXiv:2508.10439. \
-[4] Domahidi, A., Chu, E., & Boyd, S. (2013, July). ECOS: An SOCP solver for embedded systems. In 2013 European control conference (ECC) (pp. 3071-3076). IEEE.
+[1] Sleiman, J. P., Farshidian, F., Minniti, M. V., & Hutter, M. (2021). A unified mpc framework for whole-body dynamic locomotion and manipulation. IEEE Robotics and Automation Letters, 6(3), 4688-4695. \
+[2] Manuel Yves Galliker, Whole-body Humanoid MPC: Realtime Physics-Based Procedural Loco-Manipulation Planning and Control, https://github.com/1x-technologies/wb_humanoid_mpc \
+[3] Carpentier, J., & Mansard, N. (2018, June). Analytical derivatives of rigid body dynamics algorithms. In Robotics: Science and systems (RSS 2018). \
+[4] Farshidian, F. (2023). OCS2: An open source library for optimal control of switched systems. Accessed: May, 23.
 
 ## License
 BSD 3-Clause License
+
