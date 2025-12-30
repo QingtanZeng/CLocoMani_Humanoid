@@ -6,7 +6,7 @@
   <description>The ocs2 communication interfaces to ROS</description>
 
   <license>BSD</license>
-  <maintainer email="zengqt.e@gmail.com">Qingtan Zeng</maintainer>
+  <maintainer email="manuel.galliker@gmx.ch">Manuel Yves Galliker</maintainer>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

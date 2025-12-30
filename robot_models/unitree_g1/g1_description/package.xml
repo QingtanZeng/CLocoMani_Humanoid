@@ -4,7 +4,7 @@
   <name>g1_description</name>
   <version>1.0.0</version>
   <description>unitree g1 humanoid model</description>  
-  <maintainer email="zengqt.e@gmail.com">Qingtan Zeng</maintainer>
+  <maintainer email="manuel.galliker@gmx.ch">Manuel Yves Galliker</maintainer>
   <license>proprietary</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
