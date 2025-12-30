@@ -28,7 +28,7 @@ CLocoMani_Humanoid implements the following designs and algorithms:
 2. Real-time trajectory generation based on SCP.
 
 ## Implementation Highlights
-1. Analytical derivatives for hand-parser of centroidal dynamics and whole-body kinematics.
+1. Derivatives through theoretical derivation for hand-parser of centroidal dynamics and whole-body kinematics.
 2. SCP in MPC: real-time handle with nonlinear OCP completely with hard constraints including {Affine Equality, Non-Negative, SOC}, rather than soft cost.
 3. Dynamics: FOH discretization to less nodes and smooth control, better than ZOH.
 
@@ -42,6 +42,7 @@ CLocoMani_Humanoid implements the following designs and algorithms:
 
 ## License
 BSD 3-Clause License
+
 
 
 
