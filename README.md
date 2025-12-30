@@ -1,7 +1,7 @@
 > :information_source: The repository CLocoMani_Humanoid is being developed in parallel with the author's R&D progress.
 
 # Computational Loco-Manipulation of Humanoid Robots
-* Integrated whole-body kinematics and operation dynamics based on Sequential Convex Programming.*
+* Integrated whole-body kinematics and operation dynamics based on sequential convex programming.*
 
 <p align="center">
 <img alt="CLocoMani_Humanoid"
@@ -42,6 +42,7 @@ CLocoMani_Humanoid implements the following designs and algorithms:
 
 ## License
 BSD 3-Clause License
+
 
 
 
