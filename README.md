@@ -16,7 +16,9 @@
 
 The <b>Computational Loco-Manipulation of Humanoid Robots</b> (CLocoMani_Humanoid) is a C++ implementation of trajectory generation 
 of <b>integrated whole-body kinematics and operation dynamics</b> [1], by real-time SCP in MCP loop with first-order Quadratic SOCP solver, 
-solely for academic purposes. Its architecture mainly refers to wb_humanoid_mpc [2] and OCS2 [4].
+solely for academic purposes. 
+
+Its architecture and infrastructure mainly refers to wb_humanoid_mpc [2] and OCS2 [4].
 
 ---
 
@@ -40,5 +42,6 @@ CLocoMani_Humanoid implements the following designs and algorithms:
 
 ## License
 BSD 3-Clause License
+
 
 
