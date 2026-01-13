@@ -7,7 +7,7 @@
 <img alt="CLocoMani_Humanoid"
     title="CLocoMani_Humanoid"
     src="media/CLocomani.png"
-    width="800px" />
+    width="500px" />
 </p>
 
 <p align="center">
@@ -42,6 +42,7 @@ CLocoMani_Humanoid implements the following designs and algorithms:
 
 ## License
 BSD 3-Clause License
+
 
 
 
