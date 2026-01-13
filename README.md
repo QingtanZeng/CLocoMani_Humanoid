@@ -6,7 +6,7 @@
 <p align="center">
 <img alt="CLocoMani_Humanoid"
     title="CLocoMani_Humanoid"
-    src="media/CLocoMani_Humanoid.png"
+    src="media/CLocomani.png"
     width="800px" />
 </p>
 
