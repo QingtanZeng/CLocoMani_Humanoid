@@ -67,7 +67,7 @@ auto baseVelocityFromFullCentroidalKinematics(const vector_t& state, const vecto
     -> vector_t {
 // get common classes
 const auto& model = pinocchioInterface_.getModel();
-auto& data = pinocchioInterface_getData();
+auto& data = pinocchioInterface_.getData();
 const auto& info = mapping_.getCentroidalModelInfo();
 
 // check dimensions
@@ -83,28 +83,22 @@ Eigen::Matrix<SCALAR, 6, 1> centrdlMmtm = info.robotMass *
                                           centroidal_model::getNormalizedMomentum(state, info);
 
 // Compute CMM and its inverse
-const auto& CMM = getCentroidalMomentumMatrix(*pinocchioInterface_);    // get Ag
+const auto& Ag = getCentroidalMomentumMatrix(*pinocchioInterface_);    // get Ag
+const Eigen::Matrix<SCALAR, 6, 6> Agb = Ag.template leftCols<6>();
+const auto Agb_inv = computeFloatingBaseCentroidalMomentumMatrixInverse(Agb);
 
+const auto& Agj = Ag.rightCols(info.actuatedDofNum);
 
 // Base Velocity in LWA frame
 vector_t baseVelocity(6);
-baseVelocity = Ab_inv * (centrdlMmtm - Aj*) 
+baseVelocity.noalias() = Agb_inv * (centrdlMmtm - Agj*jointVelocity);
 
-
-
+return baseVelocity;
 }
 
 template <typename SCALAR>
 auto jacobianFullCentroidalKinematics(const vector_t& state, 
                             const matrix_t& Jq, const matrix_t& Jv) const
-
-
-
-
-
-
-
-
 
 
 
